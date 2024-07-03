@@ -1,7 +1,7 @@
-import { filtersStorageInstance } from '../filters-state-storage';
-import { getExercisesList } from '../get-exercises-list';
-import { filterCategories } from '../constants';
-import { elements } from '../elements';
+import { filtersStorageInstance } from './filters-state-storage';
+import { getExercisesList } from './get-exercises-list';
+import { filterCategories } from './constants';
+import { elements } from './elements';
 
 async function handleSubmit(element) {
   element.preventDefault();

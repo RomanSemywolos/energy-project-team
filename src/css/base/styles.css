@@ -7,13 +7,10 @@
 @import url('../layout/hero.css');
 @import url('../layout/home.css');
 @import url('../layout/footer.css'); */
-@import url('../layout/base-ui.css');
-@import url('../layout/main-content.css');
+
 @import url('../layout/filter-and-search-controller.css');
 @import url('../layout/filter_exersices.css');
-@import url('../layout/search.css');
 @import url('../layout/exercises.css');
-@import url('../layout/pagination.css');
 
 /* cross-browser normalization */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');

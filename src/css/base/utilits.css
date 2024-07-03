@@ -103,3 +103,16 @@ body {
   font-style: italic;
   font-display: swap;
 }
+
+/* hide search button */
+.search-input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search-input:placeholder-shown + .search-button-clear {
+  display: none;
+}
+
+.search-input:focus::placeholder {
+  visibility: hidden;
+}
