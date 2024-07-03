@@ -1,7 +1,7 @@
 import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 import { getExercisesList } from './get-exercises-list';
-import { openExercisesList } from './dom/init-lists-view';
+import { setExercisesListVisible } from './set-exercises-list-visibility';
 
 elements.groupList.addEventListener('click', e => {
   let filter = e.target.dataset.filter;
@@ -11,6 +11,6 @@ elements.groupList.addEventListener('click', e => {
     filtersStorageInstance.setGroup(group);
     filtersStorageInstance.setFilterCategory(filter);
     getExercisesList();
-    openExercisesList();
+    setExercisesListVisible();
   }
 });

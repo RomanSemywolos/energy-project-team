@@ -1,6 +1,6 @@
 import { filtersStorageInstance } from '../filters-state-storage.js';
 import { elements } from '../elements.js';
-import { closeExercisesList } from './init-lists-view.js';
+import { setExercisesListHidden } from '../set-exercises-list-visibility.js';
 import { getGroupList } from '../get-group-list.js';
 
 const initPage = filtersStorageInstance.getGroupPage();
@@ -25,7 +25,7 @@ elements.filtersTabs.addEventListener('click', event => {
 
   const newFilter = event.target.textContent.trim();
   elements.groupList.innerHTML = '';
-  closeExercisesList();
+  setExercisesListHidden();
 
   filtersStorageInstance.setFilterCategory(newFilter);
   filtersStorageInstance.getGroupPage(1);
