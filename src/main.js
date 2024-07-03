@@ -1,5 +1,3 @@
-import './js/dom/handle-search';
-
 import './js/events/submit-search';
 
 import './js/init-filters.js';
