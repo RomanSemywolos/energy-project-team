@@ -1,37 +1,27 @@
 import { filtersStorageInstance } from '../filters-state-storage.js';
 import { elements } from '../elements.js';
-import { setExercisesListHidden } from '../set-exercises-list-visibility.js';
 import { getGroupList } from '../get-group-list.js';
+import { getExercisesList } from '../get-exercises-list';
+import {
+  setExercisesListVisible,
+  setExercisesListHidden,
+} from '../set-exercises-list-visibility';
 
 const initPage = filtersStorageInstance.getGroupPage();
 const initFilter = filtersStorageInstance.getFilterCategory();
+
+getGroupList({ page: initPage, filter: initFilter });
+
+if (filtersStorageInstance.isExercisesListVisible()) {
+  getExercisesList();
+  setExercisesListVisible();
+} else {
+  setExercisesListHidden();
+}
 
 elements.exercisesFiltersTabsList.forEach(elem => {
   const textContent = elem.textContent.trim();
   if (textContent === initFilter) {
     elem.classList.add('active');
   }
-});
-
-getGroupList({ page: initPage, filter: initFilter });
-
-// listener
-elements.filtersTabs.addEventListener('click', event => {
-  elements.exercisesFiltersTabsList.forEach(elem => {
-    elem.classList.remove('active');
-  });
-
-  event.target.classList.add('active');
-
-  const newFilter = event.target.textContent.trim();
-  elements.groupList.innerHTML = '';
-  setExercisesListHidden();
-
-  filtersStorageInstance.setFilterCategory(newFilter);
-  filtersStorageInstance.getGroupPage(1);
-  filtersStorageInstance.setExercisesPage(1);
-  filtersStorageInstance.setExercisesKeyword('');
-  elements.searchInputElement.value = '';
-
-  getGroupList({ page: 1, filter: newFilter });
 });
