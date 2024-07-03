@@ -37,7 +37,7 @@ class ExercisesAPI {
       [filterCategory]: group,
       keyword,
       page,
-      limit: 10,
+      limit: 12,
     });
     const path = `/exercises?${params}`;
     return await this.fetchData(path);
