@@ -1,7 +1,7 @@
 import { filtersStorageInstance } from '../filters-state-storage.js';
-import { refs } from '../refs';
+import { elements } from '../elements.js';
 import { exercisesAPI } from '../api/exercises-api.js';
-import renderExercisesList from '../dom/render-exercises-list';
+import renderExercisesList from '../render-exercises-list';
 
 import { filterCategories } from '../constants';
 
@@ -26,10 +26,10 @@ export default async function initialExercisesList() {
     keyword: currentKeyword,
   });
 
-  // addText(refs.breadcrumbsText, group, refs.breadcrumbsDivider);
+  // addText(elements.breadcrumbsText, group, elements.breadcrumbsDivider);
   // Render exercises list
 
-  renderExercisesList(refs.exercisesContainer, responseData.results);
+  renderExercisesList(elements.exercisesContainer, responseData.results);
 
   // addPagination(
   //   'main-exercises-pagination',

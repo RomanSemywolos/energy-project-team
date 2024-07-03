@@ -1,9 +1,9 @@
-import { refs } from '../refs';
+import { elements } from '../elements';
 
 import { filtersStorageInstance } from '../filters-state-storage';
 
 document.addEventListener('DOMContentLoaded', () => {
   const currentKeyword = filtersStorageInstance.getExercisesKeyword();
 
-  refs.searchInputElement.value = currentKeyword ?? '';
+  elements.searchInputElement.value = currentKeyword ?? '';
 });

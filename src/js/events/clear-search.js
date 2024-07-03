@@ -1,10 +1,10 @@
-import { refs } from '../refs';
+import { elements } from '../elements';
 
 import { filtersStorageInstance } from '../filters-state-storage';
 import initialExerciseList from './initial-exercise-list';
 
-export default refs.searchClearButton.addEventListener('click', e => {
-  refs.searchInputElement.value = '';
+export default elements.searchClearButton.addEventListener('click', e => {
+  elements.searchInputElement.value = '';
 
   filtersStorageInstance.setExercisesKeyword('');
   filtersStorageInstance.setExercisesPage(1);

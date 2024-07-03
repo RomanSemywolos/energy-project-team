@@ -1,25 +1,22 @@
 import { filtersStorageInstance } from '../filters-state-storage';
-
-import { refs } from '../refs';
+import { elements } from '../elements';
 
 export const openExercisesList = () => {
   filtersStorageInstance.openExercisesList();
-  refs.exercisesFiltersList.classList.add('is-hidden');
-  refs.exercisesFiltersPagination.classList.add('is-hidden');
-
-  refs.searchFormElement.classList.remove('is-hidden');
-  refs.exercisesContainer.classList.remove('is-hidden');
-  refs.mainExercisesPagination.classList.remove('is-hidden');
+  elements.exercisesFiltersList.classList.add('is-hidden');
+  elements.exercisesFiltersPagination.classList.add('is-hidden');
+  elements.searchFormElement.classList.remove('is-hidden');
+  elements.exercisesContainer.classList.remove('is-hidden');
+  // elements.mainExercisesPagination.classList.remove('is-hidden');
 };
 
 export const closeExercisesList = () => {
   filtersStorageInstance.closeExercisesList();
-  refs.exercisesFiltersList.classList.remove('is-hidden');
-  refs.exercisesFiltersPagination.classList.remove('is-hidden');
-
-  refs.searchFormElement.classList.add('is-hidden');
-  refs.exercisesContainer.classList.add('is-hidden');
-  refs.mainExercisesPagination.classList.add('is-hidden');
+  elements.exercisesFiltersList.classList.remove('is-hidden');
+  elements.exercisesFiltersPagination.classList.remove('is-hidden');
+  elements.searchFormElement.classList.add('is-hidden');
+  elements.exercisesContainer.classList.add('is-hidden');
+  // elements.mainExercisesPagination.classList.add('is-hidden');
 };
 
 // init list
