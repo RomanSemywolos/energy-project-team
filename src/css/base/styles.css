@@ -2,34 +2,15 @@
 @import url('./reset.css');
 
 /* sections */
-
 /* @import url('../layout/header.css');
 @import url('../layout/hero.css');
 @import url('../layout/home.css');
 @import url('../layout/footer.css'); */
 
-@import url('../layout/filter-and-search-controller.css');
 @import url('../layout/filter_exersices.css');
-@import url('../layout/exercises.css');
+
+/* toDo: remove */
+@import url('../layout/test-only.css');
 
 /* cross-browser normalization */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');
-
-.is-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  outline: transparent;
-  outline-offset: 0;
-  visibility: hidden;
-  pointer-events: none;
-  position: absolute;
-  opacity: 0;
-}

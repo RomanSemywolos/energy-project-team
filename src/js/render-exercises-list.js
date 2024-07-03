@@ -17,7 +17,7 @@ export default function renderExercisesList(container, exercisesList) {
   if (!exercisesList || exercisesList.length === 0) {
     container.insertAdjacentHTML(
       'beforeend',
-      `<li class="list-item-error">
+      `<li class="error-card">
         We haven't found exercises. Please try another search term
       </li>`
     );
