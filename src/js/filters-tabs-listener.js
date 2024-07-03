@@ -15,7 +15,7 @@ elements.filtersTabs.addEventListener('click', event => {
   setExercisesListHidden();
 
   filtersStorageInstance.setFilterCategory(newFilter);
-  filtersStorageInstance.getGroupPage(1);
+  filtersStorageInstance.setGroupPage(1);
   filtersStorageInstance.setExercisesPage(1);
   filtersStorageInstance.setExercisesKeyword('');
   elements.searchInputElement.value = '';

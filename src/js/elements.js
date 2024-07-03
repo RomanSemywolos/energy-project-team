@@ -1,6 +1,9 @@
 export const elements = {
   body: document.querySelector('body'),
   groupList: document.querySelector('.js-group-list'),
+  exercisesFiltersPagination: document.getElementById(
+    'js-group-list-pagination'
+  ),
   filtersTabs: document.getElementById('filters-tabs'),
   exercisesFiltersTabsList: document.querySelectorAll('.filters-tab'),
   searchInputElement: document.querySelector('.search-input'),
