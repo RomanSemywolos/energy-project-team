@@ -8,11 +8,11 @@ const EXERCISES_KEYWORD = 'exercises-keyword';
 const defaultCategory = 'Muscles';
 
 class FiltersStateStorage {
-  openExercisesList() {
+  setExercisesListVisible() {
     sessionStorage.setItem(IS_EXERCISES_LIST_VISIBLE, 'true');
   }
 
-  closeExercisesList() {
+  setExercisesListHidden() {
     sessionStorage.setItem(IS_EXERCISES_LIST_VISIBLE, 'false');
   }
 

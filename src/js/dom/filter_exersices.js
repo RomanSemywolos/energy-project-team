@@ -21,7 +21,7 @@ elements.exercisesFiltersTabsList.forEach(elem => {
 
 function getFiltersExercises({ page, filter }) {
   exercisesAPI.getExercisesFilter({ page, filter }).then(data => {
-    const container = elements.exercisesFiltersList;
+    const container = elements.groupList;
     renderGroupsList(container, data.results);
   });
 }
@@ -34,7 +34,7 @@ elements.exercisesFiltersTabs.addEventListener('click', event => {
   event.target.classList.add('active');
 
   const newFilter = event.target.textContent.trim();
-  elements.exercisesFiltersList.innerHTML = '';
+  elements.groupList.innerHTML = '';
   closeExercisesList();
 
   filtersStorageInstance.setFilterCategory(newFilter);

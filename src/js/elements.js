@@ -1,6 +1,6 @@
 export const elements = {
   body: document.querySelector('body'),
-  exercisesFiltersList: document.querySelector('.js-exercises-filters-list'),
+  groupList: document.querySelector('.js-group-list'),
   exercisesFiltersTabs: document.getElementById('exercises-filters-tabs'),
   exercisesFiltersTabsList: document.querySelectorAll('.exercises-filters-tab'),
   exercisesFiltersPagination: document.getElementById(

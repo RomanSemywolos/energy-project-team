@@ -4,7 +4,6 @@ function createExercisesMarkup(data) {
       ({ name }) =>
         `<li class="exercise-card">
           <div>
-            <div>Exercise card</div>
             <div>Name - ${name}</div>
           </div>
         </li>`

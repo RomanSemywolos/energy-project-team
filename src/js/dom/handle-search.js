@@ -1,9 +1,8 @@
 import { filtersStorageInstance } from '../filters-state-storage';
-import initialExerciseList from '../events/initial-exercise-list';
+import getExercisesList from '../events/initial-exercise-list';
 import { filterCategories } from '../constants';
 
 export default async function handleSearchSubmit(element) {
-  // Prevent page reload
   element.preventDefault();
 
   let filter = filtersStorageInstance.getFilterCategory().toLowerCase();
@@ -13,7 +12,7 @@ export default async function handleSearchSubmit(element) {
   if (filter === filterCategories.BODY_PARTS) {
     filter = filter.slice(0, -1);
   }
-  group = group.toLowerCase();
+  group = group?.toLowerCase();
 
   // Clear spaces and capital letters from user input
   const keyword =
@@ -22,5 +21,5 @@ export default async function handleSearchSubmit(element) {
   filtersStorageInstance.setExercisesKeyword(keyword);
   filtersStorageInstance.setExercisesPage(1);
 
-  initialExerciseList();
+  getExercisesList();
 }
