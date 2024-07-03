@@ -1,16 +1,10 @@
-import { exercisesAPI } from '../api/exercises-api.js';
 import { filtersStorageInstance } from '../filters-state-storage.js';
 import { elements } from '../elements.js';
-//
 import { closeExercisesList } from './init-lists-view.js';
-import renderGroupsList from '../render-groups-list.js';
-
-// import { addPagination } from '../helper/add-pagination.js';
+import { getGroupList } from '../get-group-list.js';
 
 const initPage = filtersStorageInstance.getGroupPage();
 const initFilter = filtersStorageInstance.getFilterCategory();
-
-getFiltersExercises({ page: initPage, filter: initFilter });
 
 elements.exercisesFiltersTabsList.forEach(elem => {
   const textContent = elem.textContent.trim();
@@ -19,14 +13,10 @@ elements.exercisesFiltersTabsList.forEach(elem => {
   }
 });
 
-function getFiltersExercises({ page, filter }) {
-  exercisesAPI.getExercisesFilter({ page, filter }).then(data => {
-    const container = elements.groupList;
-    renderGroupsList(container, data.results);
-  });
-}
+getGroupList({ page: initPage, filter: initFilter });
 
-elements.exercisesFiltersTabs.addEventListener('click', event => {
+// listener
+elements.filtersTabs.addEventListener('click', event => {
   elements.exercisesFiltersTabsList.forEach(elem => {
     elem.classList.remove('active');
   });
@@ -43,5 +33,5 @@ elements.exercisesFiltersTabs.addEventListener('click', event => {
   filtersStorageInstance.setExercisesKeyword('');
   elements.searchInputElement.value = '';
 
-  getFiltersExercises({ page: 1, filter: newFilter });
+  getGroupList({ page: 1, filter: newFilter });
 });

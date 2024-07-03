@@ -1,10 +1,10 @@
-import { filtersStorageInstance } from '../filters-state-storage.js';
-import { elements } from '../elements.js';
-import { exercisesAPI } from '../api/exercises-api.js';
-import renderExercisesList from '../render-exercises-list';
-import { filterCategories } from '../constants';
+import { filtersStorageInstance } from './filters-state-storage.js';
+import { elements } from './elements.js';
+import { exercisesAPI } from './api/exercises-api.js';
+import renderExercisesList from './render-exercises-list.js';
+import { filterCategories } from './constants.js';
 
-export default async function getExercisesList() {
+export async function getExercisesList() {
   let filterCategory = filtersStorageInstance.getFilterCategory();
   let group = filtersStorageInstance.getGroup();
 
@@ -26,5 +26,3 @@ export default async function getExercisesList() {
   elements.searchInputElement.value = currentKeyword ?? '';
   renderExercisesList(elements.exercisesContainer, responseData.results);
 }
-
-getExercisesList();

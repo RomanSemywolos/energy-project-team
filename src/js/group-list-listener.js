@@ -1,6 +1,6 @@
 import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
-import getExercisesList from './events/initial-exercise-list';
+import { getExercisesList } from './get-exercises-list';
 import { openExercisesList } from './dom/init-lists-view';
 
 elements.groupList.addEventListener('click', e => {

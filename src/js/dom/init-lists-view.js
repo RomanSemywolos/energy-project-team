@@ -1,5 +1,6 @@
 import { filtersStorageInstance } from '../filters-state-storage';
 import { elements } from '../elements';
+import { getExercisesList } from '../get-exercises-list';
 
 export const openExercisesList = () => {
   filtersStorageInstance.setExercisesListVisible();
@@ -22,6 +23,7 @@ export const closeExercisesList = () => {
 // init list
 
 if (filtersStorageInstance.isExercisesListVisible()) {
+  getExercisesList();
   openExercisesList();
 } else {
   closeExercisesList();

@@ -1,5 +1,5 @@
 import { filtersStorageInstance } from '../filters-state-storage';
-import getExercisesList from '../events/initial-exercise-list';
+import { getExercisesList } from '../get-exercises-list';
 import { filterCategories } from '../constants';
 
 export default async function handleSearchSubmit(element) {
