@@ -1,14 +1,16 @@
-@import url('./reset.css');
 @import url('./utilits.css');
+@import url('./reset.css');
 
-/* далі сюди йде імпорт css інших секцій */
+/* sections */
 
-@import url('../layout/header.css');
+/* @import url('../layout/header.css');
 @import url('../layout/hero.css');
 @import url('../layout/home.css');
-@import url('../layout/footer.css');
+@import url('../layout/footer.css'); */
 
-/* інші штуки */
-
+/* cross-browser normalization */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');
-@import url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+
+.my-test {
+  font-size: 30px;
+}
