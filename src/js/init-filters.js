@@ -1,11 +1,11 @@
-import { filtersStorageInstance } from '../filters-state-storage.js';
-import { elements } from '../elements.js';
-import { getGroupList } from '../get-group-list.js';
-import { getExercisesList } from '../get-exercises-list';
+import { filtersStorageInstance } from './filters-state-storage.js';
+import { elements } from './elements.js';
+import { getGroupList } from './get-group-list.js';
+import { getExercisesList } from './get-exercises-list.js';
 import {
   setExercisesListVisible,
   setExercisesListHidden,
-} from '../set-exercises-list-visibility';
+} from './set-exercises-list-visibility.js';
 
 const initPage = filtersStorageInstance.getGroupPage();
 const initFilter = filtersStorageInstance.getFilterCategory();
