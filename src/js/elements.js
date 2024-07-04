@@ -3,7 +3,7 @@ export const elements = {
   groupList: document.getElementById('js-group-list'),
   groupListPagination: document.getElementById('js-group-list-pagination'),
   filtersTabs: document.getElementById('filters-tabs'),
-  exercisesFiltersTabsList: document.querySelectorAll('.filters-tab'),
+  filtersTabsList: document.querySelectorAll('.filters-tab'),
   searchInputElement: document.querySelector('.search-input'),
   searchClearButton: document.querySelector('.search-button-clear'),
   searchForm: document.querySelector('.search-form'),

@@ -92,14 +92,14 @@
   padding-bottom: 4px;
 }
 
-.filters-tab.active {
+.filters-tab.is-active {
   color: var(--dark-gray);
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.filters-tab.active:after {
+.filters-tab.is-active:after {
   content: '';
   position: absolute;
   left: 0;

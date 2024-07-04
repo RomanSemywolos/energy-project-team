@@ -27,8 +27,7 @@ export function initializePagination({
     lastItemClassName: 'pagination-item',
     template: {
       page: '<a href="#" class="pagination-page">{{page}}</a>',
-      currentPage:
-        '<a href="#" class="pagination-page pagination-page--active">{{page}}</a>',
+      currentPage: '<a href="#" class="pagination-page is-active">{{page}}</a>',
       moveButton: '<a href="#" class="is-hidden"></a>',
       disabledMoveButton: '<a href="#" class="is-hidden"></a>',
       moreButton: '<a href="#" class="is-hidden"></a>',

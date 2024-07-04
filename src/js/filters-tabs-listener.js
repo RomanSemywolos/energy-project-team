@@ -4,11 +4,11 @@ import { getGroupList } from './get-group-list.js';
 import { setExercisesListHidden } from './set-exercises-list-visibility';
 
 elements.filtersTabs.addEventListener('click', event => {
-  elements.exercisesFiltersTabsList.forEach(e => {
-    e.classList.remove('active');
+  elements.filtersTabsList.forEach(e => {
+    e.classList.remove('is-active');
   });
 
-  event.target.classList.add('active');
+  event.target.classList.add('is-active');
 
   const newFilter = event.target.textContent.trim();
   elements.groupList.innerHTML = '';

@@ -19,9 +19,9 @@ if (filtersStorageInstance.isExercisesListVisible()) {
   setExercisesListHidden();
 }
 
-elements.exercisesFiltersTabsList.forEach(elem => {
+elements.filtersTabsList.forEach(elem => {
   const textContent = elem.textContent.trim();
   if (textContent === initFilter) {
-    elem.classList.add('active');
+    elem.classList.add('is-active');
   }
 });
