@@ -2,10 +2,7 @@ import { exercisesAPI } from './api/exercises-api.js';
 import { elements } from './elements.js';
 import { filtersStorageInstance } from './filters-state-storage.js';
 import renderGroupsList from './render-groups-list.js';
-import { initializePagination } from './get-group-list-pagination.js';
-
-// import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
+import { groupListPagination } from './get-group-list-pagination.js';
 
 async function getGroupListForNewPage(page) {
   const filter = filtersStorageInstance.getFilterCategory();
@@ -20,7 +17,7 @@ export async function getGroupList({ page, filter }) {
   const { results, page: currentPage, perPage, totalPages } = responseData;
 
   const totalItems = totalPages * perPage;
-  initializePagination({
+  groupListPagination({
     currentPage,
     perPage,
     totalItems,

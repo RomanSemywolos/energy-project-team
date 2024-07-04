@@ -3,7 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 
-export function initializePagination({
+export function groupListPagination({
   currentPage,
   perPage,
   totalItems,

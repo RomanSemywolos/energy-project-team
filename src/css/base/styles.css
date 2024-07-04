@@ -1,5 +1,5 @@
-@import url('./utilits.css');
 @import url('./reset.css');
+@import url('./utilits.css');
 
 /* sections */
 /* @import url('../layout/header.css');
@@ -7,11 +7,11 @@
 @import url('../layout/home.css');
 @import url('../layout/footer.css'); */
 
-@import url('../layout/filter_exersices.css');
+@import url('../layout/group-list.css');
 @import url('../layout/pagination.css');
 
-/* toDo: remove */
-@import url('../layout/test-only.css');
+/* toDo: test only remove */
+@import url('../layout/test-only-remove.css');
 
 /* cross-browser normalization */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');
