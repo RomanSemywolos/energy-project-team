@@ -1,8 +1,8 @@
 import { filtersStorageInstance } from './filters-state-storage.js';
 import { elements } from './elements.js';
-import { exercisesAPI } from './api/exercises-api.js';
 import { renderExercisesList } from './render-exercises-list.js';
 import { filterCategories } from './constants.js';
+import { getExercises } from './api-service/exercices-api.js';
 
 export async function getExercisesList() {
   let filterCategory = filtersStorageInstance.getFilterCategory();
@@ -15,14 +15,11 @@ export async function getExercisesList() {
   group = group?.toLowerCase();
 
   const currentPage = filtersStorageInstance.getExercisesPage();
-  const currentKeyword = filtersStorageInstance.getExercisesKeyword();
 
-  const responseData = await exercisesAPI.getExercises({
-    filterCategory,
-    group,
-    page: currentPage,
-    keyword: currentKeyword,
-  });
+  // get currentKeyword
+  // const currentKeyword = filtersStorageInstance.getExercisesKeyword();
+  // pass currentKeyword
+  const responseData = await getExercises(filterCategory, group, currentPage);
 
   // set search value = currentKeyword ?? '';
   renderExercisesList(elements.exercisesWrapper, responseData.results);
