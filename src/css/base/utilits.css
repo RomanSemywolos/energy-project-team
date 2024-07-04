@@ -120,5 +120,5 @@ body {
   visibility: hidden;
   pointer-events: none;
   position: absolute;
-  opacity: 0;
+  opacity: 0 !important;
 }

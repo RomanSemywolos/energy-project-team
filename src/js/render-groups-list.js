@@ -1,3 +1,6 @@
+import anime from 'animejs';
+import { elements } from './elements.js';
+
 function createGroupsMarkup(data) {
   return data
     .map(({ filter, name, imgURL }) => {
@@ -16,7 +19,23 @@ function createGroupsMarkup(data) {
     .join('');
 }
 
+function addAnimation() {
+  const block = elements.groupList;
+  block.style.opacity = '0';
+
+  anime({
+    targets: block,
+    opacity: [0, 1],
+    duration: 300,
+    easing: 'easeOutQuad',
+    complete: () => {
+      elements.groupListPagination.style.display = 'flex';
+    },
+  });
+}
+
 export function renderGroupsList(container, groupsList) {
   container.innerHTML = '';
+  addAnimation();
   container.insertAdjacentHTML('beforeend', createGroupsMarkup(groupsList));
 }

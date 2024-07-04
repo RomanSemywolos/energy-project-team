@@ -19,6 +19,7 @@ elements.filtersTabs.addEventListener('click', event => {
   filtersStorageInstance.setExercisesPage(1);
   filtersStorageInstance.setExercisesKeyword('');
   elements.searchInputElement.value = '';
+  elements.groupListPagination.style.display = 'none';
 
   getGroupList({ page: 1, filter: newFilter });
 });

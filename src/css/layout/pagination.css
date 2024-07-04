@@ -1,5 +1,4 @@
 .group-list-pagination {
-  margin-bottom: 80px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -8,17 +7,6 @@
   gap: 8px;
 }
 
-@media screen and (min-width: 768px) {
-  .group-list-pagination {
-    margin-bottom: 64px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .group-list-pagination {
-    margin-bottom: 132px;
-  }
-}
 .group-list-pagination > button {
   width: 32px;
   height: 32px;
