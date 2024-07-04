@@ -15,3 +15,5 @@ const displayQuoteText = ({ author, quote }) => {
   quoteOfTheDay.innerHTML = `<p class="daily-quote-text">${quote}</p>
     <h4 class="daily-quote-author">${author}</h4>`;
 };
+
+export { getQuote };
