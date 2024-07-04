@@ -23,6 +23,7 @@ export async function getExercisesList() {
     page: currentPage,
     keyword: currentKeyword,
   });
-  elements.searchInputElement.value = currentKeyword ?? '';
+
+  // set search value = currentKeyword ?? '';
   renderExercisesList(elements.exercisesWrapper, responseData.results);
 }

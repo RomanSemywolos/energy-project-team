@@ -25,7 +25,6 @@ const onCategoryClick = async event => {
     filtersStorageInstance.setGroupPage(1);
     filtersStorageInstance.setExercisesPage(1);
     filtersStorageInstance.setExercisesKeyword('');
-    elements.searchInputElement.value = '';
     elements.groupListPagination.style.display = 'none';
 
     getGroupList({ page: 1, filter: newFilter });
