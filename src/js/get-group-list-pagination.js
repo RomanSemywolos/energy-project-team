@@ -5,8 +5,18 @@ export function initializePagination({
   currentPage,
   perPage,
   totalItems,
-  onPageChange,
+  totalPages,
+  onChange,
 }) {
+  const container = 'js-group-list-pagination';
+  const paginationContainer = document.getElementById(container);
+
+  if (totalPages > 1) {
+    paginationContainer.classList.remove('is-hidden');
+  } else {
+    paginationContainer.classList.add('is-hidden');
+  }
+
   const options = {
     page: Number(currentPage),
     itemsPerPage: perPage,
@@ -17,19 +27,17 @@ export function initializePagination({
     template: {
       page: '<a href="#" class="pagination-page">{{page}}</a>',
       currentPage:
-        '<div class="pagination-current-page-container">' +
-        '<a href="#" class="pagination-page pagination-current-page">{{page}}</a>' +
-        '</div>',
-      moveButton: '<a href="#" class="visually-hidden"></a>',
-      disabledMoveButton: '<a href="#" class="visually-hidden"></a>',
-      moreButton: '<a href="#" class="visually-hidden"></a>',
+        '<a href="#" class="pagination-page pagination-current-page">{{page}}</a>',
+      moveButton: '<a href="#" class="is-hidden"></a>',
+      disabledMoveButton: '<a href="#" class="is-hidden"></a>',
+      moreButton: '<a href="#" class="is-hidden"></a>',
     },
   };
 
-  const pagination = new Pagination('js-group-list-pagination', options);
+  const pagination = new Pagination(container, options);
 
   pagination.on('beforeMove', event => {
     const newPage = event.page;
-    onPageChange(newPage);
+    onChange(newPage);
   });
 }

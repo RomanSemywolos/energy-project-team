@@ -52,7 +52,8 @@ export async function getGroupList({ page, filter }) {
     currentPage,
     perPage,
     totalItems,
-    onPageChange: newPage => {
+    totalPages,
+    onChange: newPage => {
       filtersStorageInstance.setGroupPage(newPage);
       getGroupListForNewPage(newPage);
     },
