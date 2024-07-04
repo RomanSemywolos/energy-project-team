@@ -16,7 +16,7 @@ function createGroupsMarkup(data) {
     .join('');
 }
 
-export default function renderGroupsList(container, groupsList) {
+export function renderGroupsList(container, groupsList) {
   container.innerHTML = '';
   container.insertAdjacentHTML('beforeend', createGroupsMarkup(groupsList));
 }

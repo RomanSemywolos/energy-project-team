@@ -11,7 +11,7 @@ function createExercisesMarkup(data) {
     .join('');
 }
 
-export default function renderExercisesList(container, exercisesList) {
+export function renderExercisesList(container, exercisesList) {
   container.innerHTML = '';
 
   if (!exercisesList || exercisesList.length === 0) {

@@ -1,7 +1,7 @@
 import { exercisesAPI } from './api/exercises-api.js';
 import { elements } from './elements.js';
 import { filtersStorageInstance } from './filters-state-storage.js';
-import renderGroupsList from './render-groups-list.js';
+import { renderGroupsList } from './render-groups-list.js';
 import { groupListPagination } from './get-group-list-pagination.js';
 
 async function getGroupListForNewPage(page) {

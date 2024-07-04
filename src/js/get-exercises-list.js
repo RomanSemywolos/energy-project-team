@@ -1,7 +1,7 @@
 import { filtersStorageInstance } from './filters-state-storage.js';
 import { elements } from './elements.js';
 import { exercisesAPI } from './api/exercises-api.js';
-import renderExercisesList from './render-exercises-list.js';
+import { renderExercisesList } from './render-exercises-list.js';
 import { filterCategories } from './constants.js';
 
 export async function getExercisesList() {
