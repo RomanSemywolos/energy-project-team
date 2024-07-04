@@ -1,8 +1,8 @@
 :root {
-  --white: #FFFFFF;
-  --light-blue-gray: #C6CDD1;
+  --white: #ffffff;
+  --light-blue-gray: #c6cdd1;
 
-  --light-gray: #F4F4F4;
+  --light-gray: #f4f4f4;
   --light-gray-60: rgba(244, 244, 244, 0.6);
   --light-gray-40: rgba(244, 244, 244, 0.4);
   --light-gray-20: rgba(244, 244, 244, 0.2);
@@ -14,12 +14,12 @@
   --dark-gray-40: rgba(36, 36, 36, 0.4);
   --dark-gray-10: rgba(36, 36, 36, 0.1);
 
-  --bright-yellow: #EEA10C;
+  --bright-yellow: #eea10c;
 
-  --light-beige: #EFEDE8;
+  --light-beige: #efede8;
   --light-beige-20: rgba(239, 237, 232, 0.2);
 
-  --soft-silver: #D4D4D4;
+  --soft-silver: #d4d4d4;
 
   --charcoal: #111111;
   --charcoal-80: rgba(17, 17, 17, 0.8);
@@ -29,7 +29,7 @@
   --almost-black-40: rgba(4, 4, 4, 0.4);
   --almost-black-20: rgba(4, 4, 4, 0.2);
 
-  --vibrant-purple: #9747FF;
+  --vibrant-purple: #9747ff;
 
   --main-font-family: 'DMSans', sans-serif;
 }
@@ -37,6 +37,7 @@
 body {
   font-family: var(--main-font-family);
   font-style: normal;
+  background-color: var(--light-gray);
 }
 
 .section {
@@ -58,11 +59,13 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
+
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
@@ -72,14 +75,15 @@ body {
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
-  }}
+  }
+}
 @media screen and (min-width: 768px) {
 }
 
 @font-face {
   font-family: 'DMSans';
   src: url('../../fonts/DMSans/DMSans-Regular.woff2') format('woff2'),
-       url('../../fonts/DMSans/DMSans-Regular.ttf') format('truetype');
+    url('../../fonts/DMSans/DMSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -88,7 +92,7 @@ body {
 @font-face {
   font-family: 'DMSans';
   src: url('../../fonts/DMSans/DMSans-Medium.woff2') format('woff2'),
-       url('../../fonts/DMSans/DMSans-Medium.ttf') format('truetype');
+    url('../../fonts/DMSans/DMSans-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -97,7 +101,7 @@ body {
 @font-face {
   font-family: 'DMSans';
   src: url('../../fonts/DMSans/DMSans-Italic.woff2') format('woff2'),
-       url('../../fonts/DMSans/DMSans-Italic.ttf') format('truetype');
+    url('../../fonts/DMSans/DMSans-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
