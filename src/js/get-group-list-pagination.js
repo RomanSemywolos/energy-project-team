@@ -24,14 +24,12 @@ export function groupListPagination({
     itemsPerPage: perPage,
     totalItems: totalItems,
     centerAlign: true,
-    firstItemClassName: 'pagination-item',
-    lastItemClassName: 'pagination-item',
     template: {
-      page: '<a href="#" class="pagination-page">{{page}}</a>',
-      currentPage: '<a href="#" class="pagination-page is-active">{{page}}</a>',
-      moveButton: '<a href="#" class="is-hidden"></a>',
-      disabledMoveButton: '<a href="#" class="is-hidden"></a>',
-      moreButton: '<a href="#" class="is-hidden"></a>',
+      page: '<button href="#" class="test">{{page}}</button>',
+      currentPage: '<button href="#" class="test is-active">{{page}}</button>',
+      moveButton: '<button href="#" class="is-hidden"></button>',
+      disabledMoveButton: '<button href="#" class="is-hidden"></button>',
+      moreButton: '<button href="#" class="is-hidden"></button>',
     },
   };
 
