@@ -1,4 +1,5 @@
 import * as api from './js/api.js';
+import { getQuote } from './js/daily-quote.js';
 
 const init = async () => {
   const categories = await api.getExercisesByCategory();
@@ -11,6 +12,8 @@ const search = document.querySelector('.exercises_search');
 init()
   .then(resp => console.log(resp))
   .catch(error => console.log(error));
+
+getQuote();
 
 exerciseCategoryList.addEventListener('click', onCategoryClick);
 
