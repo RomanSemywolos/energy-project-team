@@ -1,5 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import { elements } from './elements';
 
 export function initializePagination({
   currentPage,
@@ -9,7 +10,7 @@ export function initializePagination({
   onChange,
 }) {
   const container = 'js-group-list-pagination';
-  const paginationContainer = document.getElementById(container);
+  const paginationContainer = elements.groupListPagination;
 
   if (totalPages > 1) {
     paginationContainer.classList.remove('is-hidden');
@@ -27,7 +28,7 @@ export function initializePagination({
     template: {
       page: '<a href="#" class="pagination-page">{{page}}</a>',
       currentPage:
-        '<a href="#" class="pagination-page pagination-current-page">{{page}}</a>',
+        '<a href="#" class="pagination-page pagination-page--active">{{page}}</a>',
       moveButton: '<a href="#" class="is-hidden"></a>',
       disabledMoveButton: '<a href="#" class="is-hidden"></a>',
       moreButton: '<a href="#" class="is-hidden"></a>',
