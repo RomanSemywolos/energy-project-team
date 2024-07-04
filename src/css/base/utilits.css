@@ -32,6 +32,7 @@
   --vibrant-purple: #9747ff;
 
   --main-font-family: 'DMSans', sans-serif;
+  --transition-fast: 330ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -105,4 +106,23 @@ body {
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+}
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  outline: transparent;
+  outline-offset: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  opacity: 0 !important;
 }
