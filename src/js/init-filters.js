@@ -20,9 +20,9 @@ if (filtersStorageInstance.isExercisesListVisible()) {
   setExercisesListHidden();
 }
 
-elements.filtersTabsList.forEach(elem => {
+elements.exercisesNavList.forEach(elem => {
   const textContent = elem.textContent.trim();
   if (textContent === initFilter) {
-    elem.classList.add('is-active');
+    elem.classList.add('exercises__nav-item-current');
   }
 });

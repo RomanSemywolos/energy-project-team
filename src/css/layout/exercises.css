@@ -57,13 +57,6 @@
   line-height: 20px;
   padding: 12px 14px 12px 14px;
 }
-/* 
-.exercises_wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 40px;
-} */
 
 .exercises_nav {
   display: flex;

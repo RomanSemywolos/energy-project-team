@@ -12,7 +12,6 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
   });
 
   const response = await axios.get(`${EXERCISES}?${params}`);
-  console.log(response.data);
   return response.data;
 };
 

@@ -3,10 +3,6 @@ export const elements = {
   groupListWrapper: document.querySelector('.group-list-wrapper'),
   groupList: document.getElementById('js-group-list'),
   groupListPagination: document.getElementById('js-group-list-pagination'),
-  filtersTabs: document.getElementById('filters-tabs'),
-  filtersTabsList: document.querySelectorAll('.filters-tab'),
-  searchInputElement: document.querySelector('.search-input'),
-  searchClearButton: document.querySelector('.search-button-clear'),
-  searchForm: document.querySelector('.search-form'),
+  exercisesNavList: document.querySelectorAll('.exercises__nav-item'),
   exercisesWrapper: document.querySelector('.exercises-list-wrapper'),
 };
