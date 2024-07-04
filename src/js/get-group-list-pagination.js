@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { elements } from './elements';
+import { filtersStorageInstance } from './filters-state-storage';
 
 export function initializePagination({
   currentPage,
@@ -12,7 +13,7 @@ export function initializePagination({
   const container = 'js-group-list-pagination';
   const paginationContainer = elements.groupListPagination;
 
-  if (totalPages > 1) {
+  if (totalPages > 1 && !filtersStorageInstance.isExercisesListVisible()) {
     paginationContainer.classList.remove('is-hidden');
   } else {
     paginationContainer.classList.add('is-hidden');
