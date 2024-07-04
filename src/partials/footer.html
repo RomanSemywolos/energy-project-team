@@ -1,3 +1,109 @@
-<footer>
+<footer class="footer-section" id="footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-base">
+                <div class="footer-main">
+                    <a class="footer-logo" href="./index.html">
+                        <svg width="131.53" height="14">
+                            <use href="./img/icons.svg#logo"></use>
+                        </svg>
+                    </a>
+                    <p class="footer-text">Your Energy</p>
+                </div>
+                
+                <ul class="footer-social-media-list">
+                    <li class="item">
+                        <a class="footer-social-media-link" href="https://www.facebook.com/goITclub">
+                            <svg width="24" height="24">
+                                <use href="./img/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="footer-social-media-link" href="https://www.instagram.com/goitclub">
+                            <svg width="24" height="24">
+                                <use href="./img/icons.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="footer-social-media-link" href="https://www.youtube.com/c/GoIT">
+                            <svg width="24" height="24">
+                                <use href="./img/icons.svg#youtube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="footer-text-section">
+                <p class="footer-text-title">Transforming your body shape with us</p>
+                <p class="footer-text-subtitle">Subscribe and learn about new exercises!</p>
+                
+                <!-- Форма підписки -->
+                <div class="subscription-form">
+                    <form id="subscriptionForm">
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" />
+                        </div>
+                        <div>
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Кінець форми підписки -->
+            </div>
+
+            <div class="footer-rights-section">
+                <span class="footer-rights-text">Your Energy. All rights reserved.</span>
+                <ul class="footer-rights-list">
+                    <li>
+                        <a class="footer-rights-policy" href="" aria-label="Privacy Policy">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-rights-service" href="" aria-label="Terms of Service">
+                            Terms of Service
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-rights-year"> ©2023 </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<script>
+    document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Зупиняємо стандартну відправку форми
+
+        const emailInput = document.getElementById('email');
+        if (emailInput.checkValidity()) {
+            const email = emailInput.value;
+            
+            // Відправка даних на backend
+            fetch('https://your-energy.b.goit.study/api/subscription', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Обробка відповіді від backend
+                alert('Subscription successful!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Subscription failed. Please try again later.');
+            });
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+</script>

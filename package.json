@@ -16,6 +16,7 @@
   "author": "Roman Semywolos",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "animejs": "^3.2.2",
     "izitoast": "^1.4.0",
     "vite-plugin-full-reload": "^1.0.5",
