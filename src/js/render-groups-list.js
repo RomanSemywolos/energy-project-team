@@ -7,11 +7,11 @@ function createGroupsMarkup(data) {
       const dataFilterName = `data-filter="${filter}"`;
       const dataGroupName = `data-group="${name}"`;
       return `
-        <li class="filters__item" ${dataFilterName} ${dataGroupName}>
-          <img class="filters__img-first" src="${imgURL}" alt="${filter} - ${name}" ${dataFilterName} ${dataGroupName}></img>
-          <div class="filters__wrapper-first" ${dataFilterName} ${dataGroupName}>
-          <h2 class="filters__title-first" ${dataFilterName} ${dataGroupName}>${name}</h2>
-          <p class="filters__text-first" ${dataFilterName} ${dataGroupName}>${filter}</p>
+        <li class="group-list-card" ${dataFilterName} ${dataGroupName}>
+          <img class="group-list-card-img" src="${imgURL}" alt="${filter} - ${name}" ${dataFilterName} ${dataGroupName}></img>
+          <div class="group-list-card-info" ${dataFilterName} ${dataGroupName}>
+          <h2 class="group-list-card-title" ${dataFilterName} ${dataGroupName}>${name}</h2>
+          <p class="group-list-card-text" ${dataFilterName} ${dataGroupName}>${filter}</p>
           </div>
         </li>
       `;

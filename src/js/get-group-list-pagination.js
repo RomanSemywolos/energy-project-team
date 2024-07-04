@@ -25,8 +25,8 @@ export function groupListPagination({
     totalItems: totalItems,
     centerAlign: true,
     template: {
-      page: '<button href="#" class="test">{{page}}</button>',
-      currentPage: '<button href="#" class="test is-active">{{page}}</button>',
+      page: '<button href="#">{{page}}</button>',
+      currentPage: '<button href="#" class="is-active">{{page}}</button>',
       moveButton: '<button href="#" class="is-hidden"></button>',
       disabledMoveButton: '<button href="#" class="is-hidden"></button>',
       moreButton: '<button href="#" class="is-hidden"></button>',

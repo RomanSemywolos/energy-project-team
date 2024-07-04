@@ -10,7 +10,6 @@ import {
 const initPage = filtersStorageInstance.getGroupPage();
 const initFilter = filtersStorageInstance.getFilterCategory();
 
-console.log('init');
 elements.groupListPagination.style.display = 'none';
 getGroupList({ page: initPage, filter: initFilter });
 
