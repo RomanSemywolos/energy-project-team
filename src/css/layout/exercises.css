@@ -473,6 +473,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .exercises_wrapper {
+    margin-bottom: 32px;
+  }
+
   .exercises_text-icon-wrap {
     left: 40px;
     right: 40px;
@@ -494,6 +498,15 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .exercises_wrapper {
+    align-items: flex-start;
+  }
+
+  .exercises_side {
+    gap: 32px;
+    margin-right: 32px;
+  }
+
   .exercises_banner-small {
     height: 444px;
     width: 242px;
