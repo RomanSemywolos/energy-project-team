@@ -2,6 +2,17 @@
   display: none;
 }
 
+.exercises_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .exercises_wrapper {
+    flex-direction: row-reverse;
+  }
+}
+
 .exercises-section {
   padding-top: 40px;
 }
@@ -105,6 +116,8 @@
   flex-wrap: wrap;
   width: 335px;
   gap: 20px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .exercises_quote {
@@ -267,6 +280,18 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .exercises_side {
+    flex-direction: column;
+    width: auto;
+    width: 450px;
+    flex-shrink: 0;
+    padding-top: 0;
+  }
+
+  .exercises_gallery {
+    flex: 1;
+  }
+
   .long-text {
     width: 50px;
   }
@@ -287,14 +312,6 @@
 
   .exercises_wrap {
     gap: 40px;
-  }
-
-  .exercises_side {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    order: 1;
-    width: 444px;
   }
 
   .exercises_quote {
