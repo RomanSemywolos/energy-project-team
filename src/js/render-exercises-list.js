@@ -1,3 +1,5 @@
+import icons from './../img/icons.svg';
+
 function capitalizeFirstLetter(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
@@ -18,7 +20,7 @@ function createExercisesMarkup(data) {
             <button class="exercise-card-header-btn" data-button-id="${_id}">
               Start
               <svg class="exercise-card-header-btn-icon" width="32" height="32">
-               <use href="./img/icons.svg#arrow"></use>
+               <use href="${icons}#arrow"></use>
               </svg>
               </svg>
             </button>
@@ -27,7 +29,7 @@ function createExercisesMarkup(data) {
             <div class="exercise-card-title-holder">
               <span class="exercise-card-title-icon" >
                 <svg width="24" height="24">
-                  <use href="./img/icons.svg#running-stick-figure-boder"></use>
+                  <use href="${icons}#running-stick-figure-boder"></use>
                 </svg>
               </span>
               <div class="exercise-card-title-name">${capitalizeFirstLetter(
