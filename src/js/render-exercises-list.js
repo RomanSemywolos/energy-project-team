@@ -26,8 +26,8 @@ function createExercisesMarkup(data) {
           <div class="exercise-card-content-holder">
             <div class="exercise-card-title-holder">
               <span class="exercise-card-title-icon" >
-                <svg width="20" height="20">
-                  <use href="./img/icons.svg#running-stick-figure"></use>
+                <svg width="24" height="24">
+                  <use href="./img/icons.svg#running-stick-figure-boder"></use>
                 </svg>
               </span>
               <div class="exercise-card-title-name">${capitalizeFirstLetter(
