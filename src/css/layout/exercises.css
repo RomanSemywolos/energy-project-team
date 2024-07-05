@@ -40,6 +40,14 @@
   margin-bottom: 20px;
 }
 
+.exercises_criss-cross-img {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 17px;
+  right: 42px;
+}
+
 .exercises_search-img {
   cursor: pointer;
   position: absolute;
