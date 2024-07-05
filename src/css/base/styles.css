@@ -4,6 +4,7 @@
 /* sections */
 
 @import url('../layout/header.css');
+@import url('../layout/menu.css');
 @import url('../layout/hero.css');
 /* @import url('../layout/home.css'); */
 @import url('../layout/exercises.css');

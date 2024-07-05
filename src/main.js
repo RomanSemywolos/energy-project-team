@@ -5,5 +5,6 @@ import { onSearchClick } from './js/exercises.js';
 
 import './js/init-filters.js';
 import './js/header.js';
+import './js/burger.js';
 import './js/group-list-listener.js';
 import './js/modal-exercises.js';
