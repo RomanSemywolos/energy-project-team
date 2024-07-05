@@ -1,0 +1,110 @@
+.group-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 375px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .group-list {
+    max-width: 704px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .group-list {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.group-list-card {
+  border-radius: 15px;
+  width: 100%;
+  position: relative;
+  background-color: var(--dark-gray);
+  transition: box-shadow var(transition-fast);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.group-list-card:hover,
+.group-list-card:focus {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.25),
+    10px 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+@media screen and (max-width: 767px) {
+  .group-list-card {
+    margin-bottom: 20px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .group-list-card {
+    flex-basis: calc((100% - 30px) / 3);
+    width: 100%;
+    position: relative;
+  }
+}
+
+.group-list-card-img {
+  width: 335px;
+  height: 225px;
+  object-fit: cover;
+  filter: brightness(0.5);
+  transition: filter var(transition-fast);
+}
+
+@media screen and (min-width: 768px) {
+  .group-list-card-img {
+    width: 100%;
+    height: 225px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .group-list-card-img {
+    height: 242px;
+  }
+}
+
+.group-list-card-img:hover,
+.group-list-card-img:focus {
+  filter: brightness(0.8);
+}
+
+.group-list-card-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.group-list-card-title {
+  color: var(--light-gray);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.group-list-card-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: var(--light-gray-40);
+  line-height: 1.5;
+}

@@ -1,0 +1,158 @@
+.exercises-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  column-gap: 16px;
+  max-width: 375px;
+}
+
+.exercise-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 30px;
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 16px;
+  height: 200px;
+  max-width: 335px;
+}
+
+.exercise-card-header-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.exercise-card-content-holder {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.exercise-card-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--dark-gray);
+  border-radius: 15px;
+  padding: 5px 7.5px;
+  width: 75px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.exercise-card-rating {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 3px;
+}
+
+.exercise-card-rating span {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.exercise-card-rating svg {
+  width: 18px;
+  height: 18px;
+}
+
+.exercise-card-header-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 58px;
+  height: 24px;
+  transform: scale(1);
+  transition: transform var(--transition-fast);
+}
+
+.exercise-card-header-btn:hover,
+.exercise-card-header-btn:focus {
+  transform: scale(1.1);
+}
+
+.exercise-card-title-holder {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.exercise-card-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+}
+
+.exercise-card-title-icon svg {
+  fill: var(--white);
+}
+
+.exercise-card-title-name {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  max-width: 260px;
+}
+
+.exercise-card-info-holder {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exercise-card-info {
+  font-size: 12px;
+}
+
+.exercise-card-info-title {
+  color: var(--almost-black-40);
+}
+
+.error-card {
+  margin: auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .exercises-list-wrapper {
+    max-width: 704px;
+    row-gap: 32px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .exercise-card {
+    width: calc((100% - 16px) / 2);
+    height: 190px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .exercises-list-wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

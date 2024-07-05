@@ -47,7 +47,7 @@
   max-height: 80vh;
   padding: 40px 20px;
   border-radius: 20px;
-  background-color: var(--color-black);
+  background-color: var(--dark-gray);
   transform: translate(-50%, -50%);
 }
 
@@ -83,10 +83,10 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  stroke: var(--color-white);
+  stroke: var(--light-gray);
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  transition: all var(--transition-dur-and-func);
+  transition: all var(--transition-fast);
 }
 
 @media screen and (min-width: 768px) {
@@ -122,7 +122,7 @@
   font-weight: 500;
   line-height: 1;
   text-transform: none;
-  color: var(--color-white);
+  color: var(--light-gray);
 }
 
 @media screen and (min-width: 768px) {
@@ -144,7 +144,7 @@
   margin-bottom: 30px;
   font-size: 12px;
   line-height: 1.5;
-  color: var(--color-white);
+  color: var(--light-gray);
 }
 
 @media screen and (min-width: 768px) {
@@ -184,7 +184,7 @@
   height: 1px;
   width: 100%;
   background-color: rgba(244, 244, 244, 0.2);
-  content: '';
+  content: "";
 }
 
 .modal-exercises__list::before {
@@ -218,7 +218,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
-  color: var(--color-white);
+  color: var(--light-gray);
 }
 
 .modal-exercises__text::first-letter {
@@ -278,18 +278,18 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border: 1px solid var(--color-white);
-  background-color: var(--color-white);
-  color: var(--color-black);
-  transition: all var(--transition-dur-and-func);
+  border: 1px solid var(--light-gray);
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  transition: all var(--transition-fast);
 }
 
 .btn-favorites__icon {
-  stroke: var(--color-black);
-  fill: var(--color-white);
+  stroke: var(--dark-gray);
+  fill: var(--light-gray);
   width: 18px;
   height: 18px;
-  transition: all var(--transition-dur-and-func);
+  transition: all var(--transition-fast);
 }
 
 @media screen and (min-width: 768px) {
@@ -300,10 +300,10 @@
 }
 
 .modal-exercises__btn-rating {
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--light-gray);
   background-color: transparent;
-  color: var(--color-white);
-  transition: all var(--transition-dur-and-func);
+  color: var(--light-gray);
+  transition: all var(--transition-fast);
 }
 
 @media screen and (min-width: 768px) {
@@ -314,16 +314,16 @@
 }
 
 .modal-exercises__btn-favorites:hover {
-  background-color: var(--color-black);
+  background-color: var(--dark-gray);
   color: white;
 }
 
 .modal-exercises__btn-favorites:hover .btn-favorites__icon {
-  fill: var(--color-black);
-  stroke: var(--color-white);
+  fill: var(--dark-gray);
+  stroke: var(--light-gray);
 }
 
 .modal-exercises__btn-rating:hover {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--light-gray);
+  color: var(---dark-gray);
 }
