@@ -12,6 +12,8 @@ const onSearchClick = async () => {
     document.querySelector('.exercises_search-input').value
   );
   console.log('Full response:', response);
+  console.log('NAME: ' + document.querySelector('.exercises_name').textContent);
+  console.log('SEARCH: ' + document.querySelector('.exercises_search-input').value);
 
   if (response && response.results) {
 
@@ -22,7 +24,6 @@ const onSearchClick = async () => {
     console.error('Invalid response structure:', response);
   }
 };
-
 
 
 exerciseSearchBtn.addEventListener('click', onSearchClick);
