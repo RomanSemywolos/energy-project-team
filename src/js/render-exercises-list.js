@@ -14,7 +14,7 @@ function createExercisesMarkup(data) {
             <span class="exercise-card-rating">
               <span>${rating}</span>
               <svg width="34" height="32">
-                <use href="./img/icons.svg#star"></use>
+                <use href="${icons}#star"></use>
               </svg>
             </span>
             <button class="exercise-card-header-btn" data-button-id="${_id}">
