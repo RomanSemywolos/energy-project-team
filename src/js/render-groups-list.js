@@ -41,8 +41,8 @@ export function renderGroupsList(container, groupsList) {
 
   hideExerciseName();
 
-  const exerciseCards = container.querySelectorAll('.exercise-card');
-  exerciseCards.forEach(card => {
+  const groupCards = container.querySelectorAll('.group-list-card');
+  groupCards.forEach(card => {
     card.addEventListener('click', () => {
       const name = card.getAttribute('data-group');
       updateExerciseName(name);
