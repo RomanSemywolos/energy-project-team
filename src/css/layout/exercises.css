@@ -5,6 +5,7 @@
 .exercises_wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 1440px) {
@@ -21,6 +22,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 335px;
+  margin: 0 auto;
 }
 
 .exercises-wrap {
@@ -258,6 +261,10 @@
     gap: 64px;
   }
 
+  .exercises_top {
+    max-width: 704px;
+  }
+
   .exercises_side {
     width: 704px;
     gap: 16px;
@@ -286,6 +293,10 @@
     width: 450px;
     flex-shrink: 0;
     padding-top: 0;
+  }
+
+  .exercises_top {
+    max-width: 100%;
   }
 
   .exercises_gallery {
