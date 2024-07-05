@@ -7,7 +7,7 @@ function createGroupsMarkup(data) {
       const dataFilterName = `data-filter="${filter}"`;
       const dataGroupName = `data-group="${name}"`;
       return `
-        <li class="group-list-card" ${dataFilterName} ${dataGroupName}>
+        <li class="group-list-card exercise-card" ${dataFilterName} ${dataGroupName}>
           <img class="group-list-card-img" src="${imgURL}" alt="${filter} - ${name}" ${dataFilterName} ${dataGroupName}></img>
           <div class="group-list-card-info" ${dataFilterName} ${dataGroupName}>
           <h2 class="group-list-card-title" ${dataFilterName} ${dataGroupName}>${name}</h2>
@@ -38,4 +38,28 @@ export function renderGroupsList(container, groupsList) {
   container.innerHTML = '';
   addAnimation();
   container.insertAdjacentHTML('beforeend', createGroupsMarkup(groupsList));
+
+  hideExerciseName();
+
+  const exerciseCards = container.querySelectorAll('.exercise-card');
+  exerciseCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const name = card.getAttribute('data-group');
+      updateExerciseName(name);
+    });
+  });
+}
+
+
+function updateExerciseName(name) {
+  const exerciseNameElement = document.querySelector('.exercises_name');
+  exerciseNameElement.textContent = `/ ${name}`;
+  exerciseNameElement.style.display = 'block';
+  exerciseNameElement.style.textTransform = 'capitalize';
+}
+
+
+function hideExerciseName() {
+  const exerciseNameElement = document.querySelector('.exercises_name');
+  exerciseNameElement.style.display = 'none';
 }
