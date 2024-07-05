@@ -12,8 +12,15 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
   });
 
   const response = await axios.get(`${EXERCISES}?${params}`);
-  return response.data;
+  
+  const searchTerm = document.querySelector('.exercises_search-input').value.toLowerCase();
+  const filteredResults = response.data.results.filter(exercise => 
+    exercise.name.toLowerCase().includes(searchTerm)
+  );
+
+  return { ...response.data, results: filteredResults };
 };
+
 
 const getExerciseById = async id => {
   const response = await axios.get(`${EXERCISES}/${id}`);

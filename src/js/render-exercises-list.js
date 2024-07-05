@@ -4,7 +4,7 @@ function capitalizeFirstLetter(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function createExercisesMarkup(data) {
+export function createExercisesMarkup(data) {
   return data
     .map(
       ({ _id, bodyPart, target, rating, burnedCalories, time, name }) =>
@@ -20,7 +20,7 @@ function createExercisesMarkup(data) {
             <button class="exercise-card-header-btn" data-button-id="${_id}">
               Start
               <svg class="exercise-card-header-btn-icon" width="32" height="32">
-               <use href="${icons}#arrow"></use>
+                <use href="${icons}#arrow"></use>
               </svg>
               </svg>
             </button>
