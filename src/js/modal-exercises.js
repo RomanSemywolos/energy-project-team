@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
 
@@ -7,18 +7,18 @@ let idFavorite;
 
 const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
-const listItem = document.querySelector('.exercises-list-wrapper');
+const listItem = document.querySelector('.exercise-card-header-btn');
 
 listItem.addEventListener('click', onExercisesCardClick);
 
 async function onExercisesCardClick(event) {
-  if (!event.target.closest('.exercise-card-header-btn')) {
+  if (!event.target.closest('.exercise-card')) {
     return;
   }
 
   try {
     const exerciseID = event.target
-      .closest('.exercise-card-header-btn')
+      .closest('.exercise-card')
       .getAttribute('data-id');
 
     const exerciseData = await getExerciseById(event);
@@ -33,10 +33,10 @@ async function onExercisesCardClick(event) {
     openModalExercises();
 
     const btnModalFavorites = document.querySelector(
-      '.modal-exercises__btn-favorites'
+      '.modal-exercises-btn-favorites'
     );
     btnModalFavorites.addEventListener('click', toggleBtn);
-    const btnModalClose = document.querySelector('.modal-exercises__btn-close');
+    const btnModalClose = document.querySelector('.modal-exercises-btn-close');
     btnModalClose.addEventListener('click', closeModalExercises);
   } catch (error) {
     console.log(error);
@@ -127,59 +127,59 @@ function createMarkup({
   const ratingStarsHTML = createRating(rating);
 
   return `
-  <div class="modal-exercises__container" data-id="${_id}">
-    <button class="modal-exercises__btn-close">
+  <div class="modal-exercises-container" data-id="${_id}">
+    <button class="modal-exercises-btn-close">
       <svg width="24" height="24">
         <use href="${icons}#menu-mobile-close"></use>
       </svg>
     </button>
 
     <img
-    class="modal-exercises__img"
+    class="modal-exercises-img"
     ${getExerciseGif}
     alt="Exercise image"
     loading="lazy"
     />
 
-    <div class="modal-exercises__card">
-      <h2 class="modal-exercises__name">${name}</h2>
-      <div class="modal-exercises__rating">${ratingStarsHTML}</div>
+    <div class="modal-exercises-card">
+      <h2 class="modal-exercises-name">${name}</h2>
+      <div class="modal-exercises-rating">${ratingStarsHTML}</div>
 
-        <div class="modal-exercises__block">
-          <ul class="modal-exercises__list">
-            <li class="modal-exercises__item">
-              <h3 class="modal-exercises__subtitle">Target</h3>
-              <p class="modal-exercises__text">${target}</p>
+        <div class="modal-exercises-block">
+          <ul class="modal-exercises-list">
+            <li class="modal-exercises-item">
+              <h3 class="modal-exercises-subtitle">Target</h3>
+              <p class="modal-exercises-text">${target}</p>
             </li>
 
-            <li class="modal-exercises__item">
-              <h3 class="modal-exercises__subtitle">Body Part</h3>
-              <p class="modal-exercises__text">${bodyPart}</p>
+            <li class="modal-exercises-item">
+              <h3 class="modal-exercises-subtitle">Body Part</h3>
+              <p class="modal-exercises-text">${bodyPart}</p>
             </li>
 
-            <li class="modal-exercises__item">
-              <h3 class="modal-exercises__subtitle">Equipment</h3>
-              <p class="modal-exercises__text">${equipment}</p>
+            <li class="modal-exercises-item">
+              <h3 class="modal-exercises-subtitle">Equipment</h3>
+              <p class="modal-exercises-text">${equipment}</p>
             </li>
 
-            <li class="modal-exercises__item">
-              <h3 class="modal-exercises__subtitle">Popular</h3>
-              <p class="modal-exercises__text">${popularity}</p>
+            <li class="modal-exercises-item">
+              <h3 class="modal-exercises-subtitle">Popular</h3>
+              <p class="modal-exercises-text">${popularity}</p>
             </li>
             
-            <li class="modal-exercises__item">
-              <h3 class="modal-exercises__subtitle">Burned Calories</h3>
-              <p class="modal-exercises__text">${burnedCalories}/${time}</p>
+            <li class="modal-exercises-item">
+              <h3 class="modal-exercises-subtitle">Burned Calories</h3>
+              <p class="modal-exercises-text">${burnedCalories}/${time}</p>
             </li>
           </ul>
-          <p class="modal-exercises__description">${description}</p>
+          <p class="modal-exercises-description">${description}</p>
         </div>
     </div>
   </div>
-  <div class="modal-exercises__btn-container">
-  <button class="modal-exercises__btn-favorites modal-exercises__btn" type="button" data-id="${_id}">
+  <div class="modal-exercises-btn-container">
+  <button class="modal-exercises-btn-favorites modal-exercises-btn" type="button" data-id="${_id}">
       Add to favorites
-      <svg class="btn-favorites__icon">
+      <svg class="btn-favorites-icon">
         <use href="${icons}#heart"></use>
       </svg>
     </button>
@@ -211,7 +211,7 @@ function toggleFavorites() {
   const local = JSON.parse(localStorage.getItem('exerciseData'));
 
   const btnModalFavorites = document.querySelector(
-    '.modal-exercises__btn-favorites'
+    '.modal-exercises-btn-favorites'
   );
 
   if (local?.some(item => item._id === idFavorite)) {
@@ -226,10 +226,10 @@ function toggleFavorites() {
 function toggleBtn() {
   isFavorite = !isFavorite;
   const btnModalFavorites = document.querySelector(
-    '.modal-exercises__btn-favorites'
+    '.modal-exercises-btn-favorites'
   );
 
-  const localFavorite = document.querySelector('.favorites__list');
+  const localFavorite = document.querySelector('.favorites-list');
 
   if (isFavorite) {
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
@@ -251,7 +251,7 @@ function toggleBtn() {
 function createAddToFavoritesMarkup() {
   return `
   Add to favorites
-    <svg class="btn-favorites__icon">
+    <svg class="btn-favorites-icon">
     <use href="${icons}#heart"></use>
     </svg>`;
 }
@@ -259,7 +259,7 @@ function createAddToFavoritesMarkup() {
 function createRemoveFromFavoritesMarkup() {
   return `
   Remove from favorites
-  <svg class="btn-favorites__icon">
+  <svg class="btn-favorites-icon">
     <use href="${icons}#trash"></use>
   </svg>`;
 }
