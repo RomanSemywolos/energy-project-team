@@ -8,11 +8,9 @@
 /* @import url('../layout/home.css'); */
 @import url('../layout/exercises.css');
 @import url('../layout/group-list.css');
+@import url('../layout/exercises-list.css');
 @import url('../layout/pagination.css');
 @import url('../layout/footer.css');
-
-/* toDo: test only remove */
-@import url('../layout/test-only-remove.css');
 
 /* cross-browser normalization */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css');
