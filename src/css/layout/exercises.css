@@ -272,13 +272,16 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .exercises_wrapper {
+  .exercises_side {
+    flex-direction: column;
+    width: auto;
+    width: 450px;
+    flex-shrink: 0;
+    padding-top: 0;
   }
 
-  .exercises_side {
-    width: auto;
-    padding-top: 0;
-    max-width: 768px;
+  .exercises_gallery {
+    flex: 1;
   }
 
   .long-text {
