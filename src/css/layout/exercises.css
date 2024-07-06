@@ -49,7 +49,7 @@
 }
 
 .exercises_search {
-  /* display: none; */
+  display: none;
   position: relative;
   margin-bottom: 20px;
 }

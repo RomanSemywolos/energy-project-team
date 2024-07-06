@@ -51,12 +51,12 @@ document.querySelectorAll('.exercises__nav-item').forEach(item => {
   });
 });
 
-window.addEventListener('resize', () => {
-  const newLimit = window.innerWidth < 768 ? 8 : 10;
-  if (newLimit !== limit) {
-    limit = newLimit;
-    onSearchClick();
-  }
-});
+// window.addEventListener('resize', () => {
+//   const newLimit = window.innerWidth < 768 ? 8 : 10;
+//   if (newLimit !== limit) {
+//     limit = newLimit;
+//     onSearchClick();
+//   }
+// });
 
 export { onSearchClick };

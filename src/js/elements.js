@@ -5,4 +5,5 @@ export const elements = {
   groupListPagination: document.getElementById('js-group-list-pagination'),
   exercisesNavList: document.querySelectorAll('.exercises__nav-item'),
   exercisesWrapper: document.querySelector('.exercises-list-wrapper'),
+  search: document.querySelector('.exercises_search'),
 };

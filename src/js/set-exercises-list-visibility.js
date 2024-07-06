@@ -5,12 +5,12 @@ export function setExercisesListVisible() {
   filtersStorageInstance.setExercisesListVisible();
   elements.groupListWrapper.classList.add('is-hidden');
   elements.exercisesWrapper.classList.remove('is-hidden');
-  // show search form
+  elements.search.style.display = 'block';
 }
 
 export function setExercisesListHidden() {
   filtersStorageInstance.setExercisesListHidden();
   elements.groupListWrapper.classList.remove('is-hidden');
   elements.exercisesWrapper.classList.add('is-hidden');
-  // hide seatch form
+  elements.search.style.display = 'none';
 }
