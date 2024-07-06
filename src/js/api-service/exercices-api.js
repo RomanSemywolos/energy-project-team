@@ -4,6 +4,7 @@ import axios from 'axios';
 const { BASE_URL, EXERCISES } = API_PROPERTIES;
 axios.defaults.baseURL = BASE_URL;
 
+
 const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
   const params = new URLSearchParams({
     [category]: bodyPart,
@@ -11,13 +12,14 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
     page,
   });
 
+  console.log(`Sending API request: ${BASE_URL}${EXERCISES}?${params}`);
+
   const response = await axios.get(`${EXERCISES}?${params}`);
   
-  console.log(`Fetching exercises with params: ${params.toString()}`);
   console.log('API response:', response.data);
 
   const searchTerm = document.querySelector('.exercises_search-input').value.toLowerCase();
-  const filteredResults = response.data.results.filter(exercise =>
+  const filteredResults = response.data.results.filter(exercise => 
     exercise.name.toLowerCase().includes(searchTerm)
   );
 
