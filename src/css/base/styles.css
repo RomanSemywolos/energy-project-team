@@ -10,6 +10,7 @@
 @import url('../layout/group-list.css');
 @import url('../layout/pagination.css');
 @import url('../layout/footer.css');
+@import url('../layout/favorites.css');
 
 /* toDo: test only remove */
 @import url('../layout/test-only-remove.css');
