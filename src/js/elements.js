@@ -9,4 +9,8 @@ export const elements = {
     'js-exercises-list-pagination'
   ),
   search: document.querySelector('.exercises_search'),
+  searchField: document.querySelector('.exercises_search'),
+  searchInput: document.querySelector('.exercises_search-input'),
+  clearSearchButton: document.querySelector('.exercises_criss-cross-img'),
+  exrciseSlash: document.querySelector('.slash'),
 };

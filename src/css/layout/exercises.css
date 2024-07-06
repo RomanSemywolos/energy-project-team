@@ -48,6 +48,10 @@
   line-height: 20px;
 }
 
+.slash {
+  display: none;
+}
+
 .exercises_search {
   display: none;
   position: relative;
@@ -63,6 +67,8 @@
 }
 
 .exercises_search-img {
+  position: absolute;
+  display: block;
   cursor: pointer;
   position: absolute;
   top: 13px;
