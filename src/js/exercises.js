@@ -9,10 +9,23 @@ const clearButton = document.querySelector('.exercises_criss-cross-img');
 const inputField = document.querySelector('.exercises_search-input');
 
 const onSearchClick = async () => {
-  const searchTerm = inputField.value.trim();
-  filtersStorageInstance.setExercisesKeyword(searchTerm);
-  getExercisesList();
-  setExercisesListVisible();
+  const category = document.querySelector('.exercises_name').textContent;
+  const searchTerm = inputField.value;
+
+  console.log(
+    `Searching exercises - Category: ${category}, Search term: ${searchTerm}`
+  );
+
+  const response = await getExercises(category, searchTerm, 1, limit);
+
+  console.log('Full response:', response);
+
+  if (response && response.results) {
+    console.log('Exercises data:', response.results);
+    renderExercisesList(elements.exercisesWrapper, response.results);
+  } else {
+    console.error('Invalid response structure:', response);
+  }
 };
 
 exerciseSearchBtn.addEventListener('click', onSearchClick);
@@ -37,19 +50,19 @@ inputField.addEventListener('keypress', event => {
   }
 });
 
-document.querySelectorAll('.exercises__nav-item').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.exercises__nav-item').forEach(el => {
-      el.classList.remove('active');
-    });
-    item.classList.add('active');
+// document.querySelectorAll('.exercises__nav-item').forEach(item => {
+//   item.addEventListener('click', () => {
+//     document.querySelectorAll('.exercises__nav-item').forEach(el => {
+//       el.classList.remove('active');
+//     });
+//     item.classList.add('active');
 
-    const category = item.textContent.trim();
-    document.querySelector('.exercises_name').textContent = category;
+//     const category = item.textContent.trim();
+//     document.querySelector('.exercises_name').textContent = category;
 
-    onSearchClick();
-  });
-});
+//     onSearchClick();
+//   });
+// });
 
 window.addEventListener('resize', () => {
   const newLimit = window.innerWidth < 768 ? 8 : 10;

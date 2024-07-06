@@ -48,8 +48,12 @@
   line-height: 20px;
 }
 
+.slash {
+  display: none;
+}
+
 .exercises_search {
-  /* display: none; */
+  display: none;
   position: relative;
   margin-bottom: 20px;
 }
@@ -63,6 +67,8 @@
 }
 
 .exercises_search-img {
+  position: absolute;
+  display: block;
   cursor: pointer;
   position: absolute;
   top: 13px;

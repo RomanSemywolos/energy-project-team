@@ -59,7 +59,7 @@
 </symbol>
 
 <symbol viewBox="0 0 15.750667 15.750667" id="search">
-<path stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 14.25a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM15.75 15.75l-3.263-3.262"/>
+<path stroke="#242424" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 14.25a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM15.75 15.75l-3.263-3.262 fill:#242424"/>
 </symbol>
 
 <symbol viewBox="0 0 13.482819 12.66829" id="star">
