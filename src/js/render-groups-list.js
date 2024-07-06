@@ -52,7 +52,9 @@ export function renderGroupsList(container, groupsList) {
 
 function updateExerciseName(name) {
   const exerciseNameElement = document.querySelector('.exercises_name');
-  exerciseNameElement.textContent = `/ ${name}`;
+  elements.exrciseSlash.style.display = 'inline';
+  exerciseNameElement.textContent = `${name}`;
+
   exerciseNameElement.style.display = 'block';
   exerciseNameElement.style.textTransform = 'capitalize';
 }

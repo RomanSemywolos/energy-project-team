@@ -17,6 +17,10 @@ const onCategoryClick = async event => {
 
     toogleClass(curentCategory, target);
 
+    elements.searchField.style.display = 'none';
+    elements.exrciseSlash.style.display = 'none';
+    clearSearchField();
+
     const newFilter = event.target.textContent.trim();
     elements.groupList.innerHTML = '';
     setExercisesListHidden();
@@ -33,6 +37,11 @@ const onCategoryClick = async event => {
   }
 };
 
+const clearSearchField = () => {
+  elements.searchInput.value = '';
+  elements.clearSearchButton.style.display = 'none';
+};
+
 exerciseCategoryList.addEventListener('click', onCategoryClick);
 
-export { onCategoryClick };
+export { onCategoryClick, clearSearchField };

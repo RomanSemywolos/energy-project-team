@@ -1,4 +1,5 @@
 import { API_PROPERTIES } from '../api/api-properties';
+import { elements } from '../elements';
 import axios from 'axios';
 
 const { BASE_URL, EXERCISES } = API_PROPERTIES;
@@ -18,7 +19,19 @@ const getExercises = async (
     page,
   });
   const response = await axios.get(`${EXERCISES}?${params}`);
-  return response.data;
+
+  console.log('API response:', response.data);
+
+  elements.searchField.style.display = 'block';
+
+  const searchTerm = document
+    .querySelector('.exercises_search-input')
+    .value.toLowerCase();
+  const filteredResults = response.data.results.filter(exercise =>
+    exercise.name.toLowerCase().includes(searchTerm)
+  );
+
+  return { ...response.data, results: filteredResults };
 };
 
 const getExerciseById = async id => {

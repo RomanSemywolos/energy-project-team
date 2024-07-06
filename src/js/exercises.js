@@ -37,19 +37,19 @@ inputField.addEventListener('keypress', event => {
   }
 });
 
-document.querySelectorAll('.exercises__nav-item').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.exercises__nav-item').forEach(el => {
-      el.classList.remove('active');
-    });
-    item.classList.add('active');
+// document.querySelectorAll('.exercises__nav-item').forEach(item => {
+//   item.addEventListener('click', () => {
+//     document.querySelectorAll('.exercises__nav-item').forEach(el => {
+//       el.classList.remove('active');
+//     });
+//     item.classList.add('active');
 
-    const category = item.textContent.trim();
-    document.querySelector('.exercises_name').textContent = category;
+//     const category = item.textContent.trim();
+//     document.querySelector('.exercises_name').textContent = category;
 
-    onSearchClick();
-  });
-});
+//     onSearchClick();
+//   });
+// });
 
 window.addEventListener('resize', () => {
   const newLimit = window.innerWidth < 768 ? 8 : 10;
