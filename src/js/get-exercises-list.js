@@ -7,7 +7,7 @@ import { pagination } from './exercises-list-pagination.js';
 
 const inputField = document.querySelector('.exercises_search-input');
 
-async function getExercisesListForNewPage(page) {
+async function getExercisesListForNewPage() {
   let filterCategory = filtersStorageInstance.getFilterCategory();
   let group = filtersStorageInstance.getGroup();
 

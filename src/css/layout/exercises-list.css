@@ -157,3 +157,7 @@
     margin-right: auto;
   }
 }
+
+.exercises-list-pagination {
+  padding-top: 24px;
+}

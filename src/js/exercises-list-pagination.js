@@ -9,7 +9,7 @@ export function pagination({
   totalPages,
   onChange,
 }) {
-  const paginationContainer = elements.groupListPagination;
+  const paginationContainer = elements.exercisesListPagination;
 
   if (totalPages > 1 && filtersStorageInstance.isExercisesListVisible()) {
     paginationContainer.classList.remove('is-hidden');
