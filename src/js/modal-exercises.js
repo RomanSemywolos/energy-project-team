@@ -1,12 +1,13 @@
 import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
+import { addContent } from './favorites';
 
 let isFavorite = false;
 let idFavorite;
 
 const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
-const listItem = document.querySelector('.js-list');
+const listItem = document.querySelector('.exercise-card-header-btn');
 
 // listItem.addEventListener('click', onExercisesCardClick);
 
@@ -20,7 +21,7 @@ async function onExercisesCardClick(event) {
       .closest('.exercise-card')
       .getAttribute('data-id');
 
-    const exerciseData = await getExerciseById(exerciseID);
+    const exerciseData = await getExerciseById(event);
     console.log(exerciseData);
     console.log('Exercise Data:', exerciseData);
 
@@ -57,7 +58,7 @@ export function updateModal(markup) {
   toggleFavorites();
 }
 
-function createRating(rating) {
+export function createRating(rating) {
   const starColor = '#EEA10C';
   const emptyStarColor = '#F4F4F4';
   const totalStars = 5;
@@ -129,7 +130,7 @@ export function createMarkup({
   <div class="modal-exercises-container" data-id="${_id}">
     <button class="modal-exercises-btn-close">
       <svg width="24" height="24">
-        <use href="${icons}#criss-cross"></use>
+        <use href="${icons}#menu-mobile-close"></use>
       </svg>
     </button>
 
@@ -165,7 +166,7 @@ export function createMarkup({
               <h3 class="modal-exercises-subtitle">Popular</h3>
               <p class="modal-exercises-text">${popularity}</p>
             </li>
-
+            
             <li class="modal-exercises-item">
               <h3 class="modal-exercises-subtitle">Burned Calories</h3>
               <p class="modal-exercises-text">${burnedCalories}/${time}</p>
@@ -182,7 +183,7 @@ export function createMarkup({
         <use href="${icons}#heart"></use>
       </svg>
     </button>
-
+ 
 </div>
 `;
 }
@@ -206,8 +207,8 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-function toggleFavorites() {
-  const local = JSON.parse(localStorage.getItem('favorites'));
+export function toggleFavorites() {
+  const local = JSON.parse(localStorage.getItem('exerciseData'));
 
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
@@ -228,7 +229,7 @@ export function toggleBtn() {
     '.modal-exercises-btn-favorites'
   );
 
-  const localFavorite = document.querySelector('.filter-list-js');
+  const localFavorite = document.querySelector('.favorites-list');
 
   if (isFavorite) {
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
@@ -246,6 +247,52 @@ export function toggleBtn() {
         }, 100);
   }
 }
+
+// export function toggleBtn() {
+//   isFavorite = !isFavorite;
+//   const btnModalFavorites = document.querySelector(
+//     '.modal-exercises-btn-favorites'
+//   );
+//   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+//   if (!btnModalFavorites) {
+//     console.error(
+//       "Element with class '.modal-exercises-btn-favorites' not found."
+//     );
+//     return;
+//   }
+
+//   const exerciseId = btnModalFavorites.getAttribute('data-id');
+
+//   if (!exerciseId) {
+//     console.error(
+//       "Element with class '.modal-exercises-btn-favorites' does not have a 'data-id' attribute."
+//     );
+//     return;
+//   }
+
+//   if (isFavorite) {
+//     // Добавляем объект упражнения в избранное
+//     favorites.push({ id: exerciseId });
+//     localStorage.setItem('favorites', JSON.stringify(favorites));
+
+//     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
+//     setTimeout(() => {
+//       addContent();
+//     }, 100);
+//   } else {
+//     // Удаляем объект упражнения из избранного
+//     const indexToRemove = favorites.findIndex(item => item.id === exerciseId);
+//     if (indexToRemove !== -1) {
+//       favorites.splice(indexToRemove, 1);
+//       localStorage.setItem('favorites', JSON.stringify(favorites));
+//     }
+//     btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+//     setTimeout(() => {
+//       addContent();
+//     }, 100);
+//   }
+// }
 
 function createAddToFavoritesMarkup() {
   return `
