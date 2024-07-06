@@ -12,7 +12,7 @@ export function createExercisesMarkup(data) {
           <div class="exercise-card-header-holder">
             <span class="exercise-card-tag">Workout</span>
             <span class="exercise-card-rating">
-              <span>${rating}</span>
+              <span>${rating.toFixed(1)}</span>
               <svg width="34" height="32">
                 <use href="${icons}#star"></use>
               </svg>
