@@ -4,7 +4,6 @@ import axios from 'axios';
 const { BASE_URL, EXERCISES } = API_PROPERTIES;
 axios.defaults.baseURL = BASE_URL;
 
-
 const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
   const params = new URLSearchParams({
     [category]: bodyPart,
@@ -25,7 +24,6 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
 
   return { ...response.data, results: filteredResults };
 };
-
 
 const getExerciseById = async id => {
   const response = await axios.get(`${EXERCISES}/${id}`);

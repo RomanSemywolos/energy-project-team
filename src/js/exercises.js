@@ -6,6 +6,7 @@ const exerciseSearchBtn = document.querySelector('.exercises_search-img');
 const clearButton = document.querySelector('.exercises_criss-cross-img');
 const inputField = document.querySelector('.exercises_search-input');
 
+let limit = window.innerWidth < 768 ? 8 : 10;
 
 const onSearchClick = async () => {
   const category = document.querySelector('.exercises_name').textContent;
@@ -13,7 +14,7 @@ const onSearchClick = async () => {
 
   console.log(`Searching exercises - Category: ${category}, Search term: ${searchTerm}`);
 
-  const response = await getExercises(category, searchTerm);
+  const response = await getExercises(category, searchTerm, 1, limit);
   
   console.log('Full response:', response);
 
@@ -47,24 +48,26 @@ inputField.addEventListener('keypress', (event) => {
   }
 });
 
-// Додаємо обробник подій для елементів навігації
 document.querySelectorAll('.exercises__nav-item').forEach(item => {
   item.addEventListener('click', () => {
-    // Видаляємо клас 'active' з усіх елементів
     document.querySelectorAll('.exercises__nav-item').forEach(el => {
       el.classList.remove('active');
     });
-    // Додаємо клас 'active' до натиснутого елемента
     item.classList.add('active');
     
-    // Оновлюємо текст категорії
     const category = item.textContent.trim();
     document.querySelector('.exercises_name').textContent = category;
     
-    // Викликаємо пошук з новою категорією
     onSearchClick();
   });
 });
 
-export { onSearchClick };
+window.addEventListener('resize', () => {
+  const newLimit = window.innerWidth < 768 ? 8 : 10;
+  if (newLimit !== limit) {
+    limit = newLimit;
+    onSearchClick();
+  }
+});
 
+export { onSearchClick };
