@@ -1,0 +1,152 @@
+/* General card styles */
+.list-of-cards {
+  margin-left: 158px;
+  margin-top: 20px;
+}
+
+.exercise-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 16px;
+  width: 335px;
+  height: 141px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Upside container styles */
+.upside-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 16px;
+  height: 24px;
+  width: 303px;
+}
+
+.badge-text {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 5px 7.5px;
+    width: 75px;
+    height: 24px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.exercise-rating {
+  display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 3px;
+}
+
+.rating-text {
+  font-weight: 400;
+  font-size: 12px;
+  color: #242424;
+}
+
+.star-icon {
+  fill: #eea10c;
+}
+
+.start-btn {
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 58px;
+    height: 24px;
+    transform: scale(1);
+    transition: transform var(--transition-fast);
+}
+
+.start-btn-text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #242424;
+  margin-right: 4px;
+}
+
+.arrow-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Title exercise styles */
+.title-exercise {
+  display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.icon-running {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--dark-gray);
+    border-radius: 50%;
+}
+
+.text-title-exercise {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  max-width: 260px;
+
+}
+
+/* Exercise items styles */
+.exercise-items {
+  flex-shrink: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    width: 303px;
+    height: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.exercise-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-calories,
+.about-body-parts,
+.target-descr {
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(36, 36, 36, 0.4);
+}
+
+.calories-value,
+.body-part-text,
+.target-text {
+  max-width: 32px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #242424;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
