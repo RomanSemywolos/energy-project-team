@@ -16,11 +16,7 @@ export async function getExercisesList() {
 
   const currentPage = filtersStorageInstance.getExercisesPage();
 
-  // get currentKeyword
-  // const currentKeyword = filtersStorageInstance.getExercisesKeyword();
-  // pass currentKeyword
   const responseData = await getExercises(filterCategory, group, currentPage);
 
-  // set search value = currentKeyword ?? '';
   renderExercisesList(elements.exercisesWrapper, responseData.results);
 }
