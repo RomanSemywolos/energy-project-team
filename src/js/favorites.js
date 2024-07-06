@@ -3,7 +3,7 @@ import { markupList } from './favorites-markup-list';
 // import { listOfFavorites } from '../';
 
 export function addContent() {
-//   listOfFavorites();
+  //   listOfFavorites();
 
   const favorites = JSON.parse(localStorage.getItem('favorites'));
 

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
 
@@ -7,7 +6,7 @@ let idFavorite;
 
 const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
-const listItem = document.querySelector('.exercise-card-header-btn');
+const listItem = document.querySelector('.js-list');
 
 listItem.addEventListener('click', onExercisesCardClick);
 
@@ -21,7 +20,7 @@ async function onExercisesCardClick(event) {
       .closest('.exercise-card')
       .getAttribute('data-id');
 
-    const exerciseData = await getExerciseById(event);
+    const exerciseData = await getExerciseById(exerciseID);
     console.log(exerciseData);
     console.log('Exercise Data:', exerciseData);
 
@@ -43,7 +42,7 @@ async function onExercisesCardClick(event) {
   }
 }
 
-function openModalExercises() {
+export function openModalExercises() {
   const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
 
   modalExercises.classList.remove('hidden');
@@ -52,7 +51,7 @@ function openModalExercises() {
   document.body.style.overflow = 'hidden';
 }
 
-function updateModal(markup) {
+export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
   toggleFavorites();
@@ -103,7 +102,7 @@ function createRating(rating) {
 
   return ratingWithStars;
 }
-function createMarkup({
+export function createMarkup({
   _id,
   bodyPart,
   equipment,
@@ -130,7 +129,7 @@ function createMarkup({
   <div class="modal-exercises-container" data-id="${_id}">
     <button class="modal-exercises-btn-close">
       <svg width="24" height="24">
-        <use href="${icons}#menu-mobile-close"></use>
+        <use href="${icons}#criss-cross"></use>
       </svg>
     </button>
 
@@ -166,7 +165,7 @@ function createMarkup({
               <h3 class="modal-exercises-subtitle">Popular</h3>
               <p class="modal-exercises-text">${popularity}</p>
             </li>
-            
+
             <li class="modal-exercises-item">
               <h3 class="modal-exercises-subtitle">Burned Calories</h3>
               <p class="modal-exercises-text">${burnedCalories}/${time}</p>
@@ -183,12 +182,12 @@ function createMarkup({
         <use href="${icons}#heart"></use>
       </svg>
     </button>
- 
+
 </div>
 `;
 }
 
-function closeModalExercises() {
+export function closeModalExercises() {
   modalExercises.classList.add('hidden');
   overlay.classList.add('hidden');
   document.body.style.paddingRight = '0px';
@@ -208,7 +207,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 function toggleFavorites() {
-  const local = JSON.parse(localStorage.getItem('exerciseData'));
+  const local = JSON.parse(localStorage.getItem('favorites'));
 
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
@@ -223,13 +222,13 @@ function toggleFavorites() {
   }
 }
 
-function toggleBtn() {
+export function toggleBtn() {
   isFavorite = !isFavorite;
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
   );
 
-  const localFavorite = document.querySelector('.favorites-list');
+  const localFavorite = document.querySelector('.filter-list-js');
 
   if (isFavorite) {
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
