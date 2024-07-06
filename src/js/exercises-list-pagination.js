@@ -3,7 +3,6 @@ import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 
 export function pagination({
-  container,
   currentPage,
   perPage,
   totalItems,
@@ -12,7 +11,7 @@ export function pagination({
 }) {
   const paginationContainer = elements.groupListPagination;
 
-  if (totalPages > 1 && !filtersStorageInstance.isExercisesListVisible()) {
+  if (totalPages > 1 && filtersStorageInstance.isExercisesListVisible()) {
     paginationContainer.classList.remove('is-hidden');
   } else {
     paginationContainer.classList.add('is-hidden');
@@ -32,7 +31,7 @@ export function pagination({
     },
   };
 
-  const pagination = new Pagination(container, options);
+  const pagination = new Pagination('js-exercises-list-pagination', options);
 
   pagination.on('beforeMove', event => {
     const newPage = event.page;
