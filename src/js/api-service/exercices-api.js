@@ -11,11 +11,7 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
     page,
   });
 
-  console.log(`Sending API request: ${BASE_URL}${EXERCISES}?${params}`);
-
   const response = await axios.get(`${EXERCISES}?${params}`);
-  
-  console.log('API response:', response.data);
 
   const searchTerm = document.querySelector('.exercises_search-input').value.toLowerCase();
   const filteredResults = response.data.results.filter(exercise => 
