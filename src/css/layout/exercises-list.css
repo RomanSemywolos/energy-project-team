@@ -3,7 +3,8 @@
   flex-direction: column;
   row-gap: 20px;
   column-gap: 16px;
-  max-width: 375px;
+  width: 375px;
+  max-width: 100%;
 }
 
 .exercise-card {
@@ -136,7 +137,7 @@
 
 @media screen and (min-width: 768px) {
   .exercises-list-wrapper {
-    max-width: 704px;
+    width: 704px;
     row-gap: 32px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -151,7 +152,7 @@
 
 @media screen and (min-width: 1440px) {
   .exercises-list-wrapper {
-    max-width: 100%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
