@@ -11,9 +11,10 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
     page,
   });
 
+  console.log(`Sending API request: ${BASE_URL}${EXERCISES}?${params}`);
+
   const response = await axios.get(`${EXERCISES}?${params}`);
   
-  console.log(`Fetching exercises with params: ${params.toString()}`);
   console.log('API response:', response.data);
 
   const searchTerm = document.querySelector('.exercises_search-input').value.toLowerCase();
@@ -23,7 +24,6 @@ const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
 
   return { ...response.data, results: filteredResults };
 };
-
 
 const getExerciseById = async id => {
   const response = await axios.get(`${EXERCISES}/${id}`);
