@@ -3,7 +3,6 @@ import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 
 export function pagination({
-  container,
   currentPage,
   perPage,
   totalItems,
@@ -32,7 +31,7 @@ export function pagination({
     },
   };
 
-  const pagination = new Pagination(container, options);
+  const pagination = new Pagination('js-group-list-pagination', options);
 
   pagination.on('beforeMove', event => {
     const newPage = event.page;

@@ -18,7 +18,6 @@ document.querySelectorAll('.exercises__nav-item').forEach(item => {
     const category = item.getAttribute('data-category');
     try {
       const data = await getCategories(category);
-      console.log(data);
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
