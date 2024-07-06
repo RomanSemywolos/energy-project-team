@@ -40,13 +40,11 @@ export async function getExercisesList() {
   }
   const bodyPart = group?.toLowerCase();
 
-  const currentPage = filtersStorageInstance.getExercisesPage();
   const currentKeyword = filtersStorageInstance.getExercisesKeyword();
   const responseData = await getExercises(
     filterCategory,
     bodyPart,
-    currentKeyword,
-    currentPage
+    currentKeyword
   );
   inputField.value = currentKeyword ?? '';
 
