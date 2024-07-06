@@ -29,7 +29,7 @@ export function createExercisesMarkup(data) {
             <div class="exercise-card-title-holder">
               <span class="exercise-card-title-icon" >
                 <svg width="20" height="20">
-                  <use href="${icons}#running-stick-figure"></use>
+                  <use href="${icons}#"></use>
                 </svg>
               </span>
               <div class="exercise-card-title-name">${capitalizeFirstLetter(
