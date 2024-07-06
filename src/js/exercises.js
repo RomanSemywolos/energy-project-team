@@ -9,23 +9,10 @@ const clearButton = document.querySelector('.exercises_criss-cross-img');
 const inputField = document.querySelector('.exercises_search-input');
 
 const onSearchClick = async () => {
-  const category = document.querySelector('.exercises_name').textContent;
-  const searchTerm = inputField.value;
-
-  console.log(
-    `Searching exercises - Category: ${category}, Search term: ${searchTerm}`
-  );
-
-  const response = await getExercises(category, searchTerm, 1, limit);
-
-  console.log('Full response:', response);
-
-  if (response && response.results) {
-    console.log('Exercises data:', response.results);
-    renderExercisesList(elements.exercisesWrapper, response.results);
-  } else {
-    console.error('Invalid response structure:', response);
-  }
+  const searchTerm = inputField.value.trim();
+  filtersStorageInstance.setExercisesKeyword(searchTerm);
+  getExercisesList();
+  setExercisesListVisible();
 };
 
 exerciseSearchBtn.addEventListener('click', onSearchClick);
