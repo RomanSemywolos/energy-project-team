@@ -12,14 +12,10 @@ const onSearchClick = async () => {
   const category = document.querySelector('.exercises_name').textContent;
   const searchTerm = inputField.value;
 
-  console.log(`Searching exercises - Category: ${category}, Search term: ${searchTerm}`);
-
   const response = await getExercises(category, searchTerm, 1, limit);
-  
-  console.log('Full response:', response);
+
 
   if (response && response.results) {
-    console.log('Exercises data:', response.results);
     renderExercisesList(elements.exercisesWrapper, response.results);
   } else {
     console.error('Invalid response structure:', response);
@@ -31,7 +27,7 @@ exerciseSearchBtn.addEventListener('click', onSearchClick);
 clearButton.addEventListener('click', () => {
   inputField.value = '';
   clearButton.style.display = 'none';
-  onSearchClick(); // Trigger search with empty input
+  onSearchClick();
 });
 
 inputField.addEventListener('input', () => {
