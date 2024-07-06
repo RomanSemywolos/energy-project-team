@@ -37,12 +37,12 @@
             <h2 class="footer__title">
                 Transforming your <span class="accent-text">body</span> shape with us
             </h2>
-            <form class="subscribe__form" id="subscribeForm">
+            <form class="subscribe__form">
                 <h3 class="subscribe__form-title">
                     Subscribe and learn about new exercises!
                 </h3>
                 <input class="subscribe__form-input" type="email" name="email" placeholder="Email" required />
-                <button class="subscribe__form-btn" type="submit" id="subscribeBtn">
+                <button class="subscribe__form-btn" type="submit">
                     Send
                 </button>
             </form>
@@ -61,33 +61,3 @@
         </div>
     </div>
 </div>
-<script>
-    document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Зупиняємо стандартну відправку форми
-
-        const emailInput = document.getElementById('email');
-        if (emailInput.checkValidity()) {
-            const email = emailInput.value;
-
-            // Відправка даних на backend
-            fetch('https://your-energy.b.goit.study/api/subscription', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email: email })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Обробка відповіді від backend
-                    alert('Subscription successful!');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Subscription failed. Please try again later.');
-                });
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    });
-</script>

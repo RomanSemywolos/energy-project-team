@@ -8,7 +8,7 @@ const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
 const listItem = document.querySelector('.js-list');
 
-listItem.addEventListener('click', onExercisesCardClick);
+// listItem.addEventListener('click', onExercisesCardClick);
 
 async function onExercisesCardClick(event) {
   if (!event.target.closest('.exercise-card')) {

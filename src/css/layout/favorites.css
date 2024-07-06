@@ -1,6 +1,4 @@
-.pd-top {
-  padding-top: 80px;
-}
+
 
 .img-exercise {
   object-fit: cover;
@@ -412,9 +410,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .pd-top {
-    padding-top: 104px;
-  }
 
   .favourites_wrapper {
     display: flex;
