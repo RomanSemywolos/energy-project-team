@@ -13,8 +13,6 @@
 @import url('../layout/pagination.css');
 @import url('../layout/footer.css');
 @import url('../layout/favorites.css');
-/* toDo: test only remove */
-@import url('../layout/test-only-remove.css');
 @import url('../layout/modal-exercises.css');
 
 /* cross-browser normalization */
