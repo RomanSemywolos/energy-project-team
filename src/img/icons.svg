@@ -6,11 +6,11 @@
 </symbol>
 
 <symbol id="arrow" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.7733" d="M16 29.867l13.867-13.867M29.867 16l-13.867-13.867M29.867 16h-27.733"></path>
+<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.7733" d="M16 29.867l13.867-13.867M29.867 16l-13.867-13.867M29.867 16h-27.733"></path>
 </symbol>
 
 <symbol id="burger-menu" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.333h-24M28 8h-24M28 18.667h-24M28 24h-24"></path>
+<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.333h-24M28 8h-24M28 18.667h-24M28 24h-24"></path>
 </symbol>
 
 <symbol id="facebook" viewBox="0 0 13 32">
@@ -27,7 +27,7 @@
 </symbol>
 
 <symbol id="criss-cross" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 9.333l-13.333 13.333M9.333 9.333l13.333 13.333"></path>
+<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 9.333l-13.333 13.333M9.333 9.333l13.333 13.333"></path>
 </symbol>
 
 <symbol id="fluent_food" viewBox="0 0 43 32">
@@ -68,8 +68,8 @@
 <path d="M14.254 13.506l0.363 0.372-4.466-12.797 5.321 12.466 0.018-0.52 0.441-13.027 0.441 13.026 0.018 0.521 0.204-0.479 5.117-11.987-4.466 12.797 9.465-9.702-8.787 10.32 12.331-5.628-11.922 6.449 13.531-0.793-13.446 1.707 12.904 4.148-13.155-3.266 10.534 8.53-11.086-7.797 6.741 11.759-7.521-11.276 2.038 13.4-2.94-13.231-2.94 13.232 1.96-12.886 0.078-0.515-0.288 0.433-7.233 10.843 6.741-11.758-0.426 0.299-10.661 7.499 10.535-8.53-13.156 3.266 12.904-4.148-13.446-1.707 13.531 0.793-11.922-6.449 12.331 5.628-8.787-10.32 9.102 9.33zM15.185 14.071l-0.646 0.4-0.458 0.607-0.208 0.731 0.070 0.757 0.339 0.68 0.562 0.512 0.709 0.275h0.76l0.709-0.274 0.562-0.512 0.339-0.681 0.070-0.757-0.208-0.731-0.459-0.607-0.645-0.4-0.748-0.14-0.747 0.14z"></path>
 </symbol>
 
-<symbol id="input-search" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667v0c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667v0zM28 28l-5.801-5.799"></path>
+<symbol id="search" viewBox="0 0 32 32">
+<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667v0c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667v0zM28 28l-5.801-5.799"></path>
 </symbol>
 
 <symbol id="running-stick-figure-border" viewBox="0 0 32 32">
@@ -83,7 +83,7 @@
 </symbol>
 
 <symbol id="menu-mobile-close" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16M8 8l16 16"></path>
+<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16M8 8l16 16"></path>
 </symbol>
 
 <symbol id="star" viewBox="0 0 34 32">
