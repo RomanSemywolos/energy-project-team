@@ -9,10 +9,10 @@
   <link rel="preload" href="/energy-project-team/assets/DMSans-Medium-e9902403.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/energy-project-team/assets/DMSans-Italic-79f2bc50.woff2" as="font" type="font/woff2" crossorigin />
   
-  <script type="module" crossorigin src="/energy-project-team/assets/vendor-a6d4c47e.js"></script>
-  <script type="module" crossorigin src="/energy-project-team/assets/main-c9d38f8f.js"></script>
+  <script type="module" crossorigin src="/energy-project-team/assets/vendor-b94ca55b.js"></script>
+  <script type="module" crossorigin src="/energy-project-team/assets/main-55105c17.js"></script>
   <link rel="stylesheet" href="/energy-project-team/assets/main-750e4335.css">
-  <link rel="stylesheet" href="/energy-project-team/assets/vendor-88da730b.css">
+  <link rel="stylesheet" href="/energy-project-team/assets/vendor-543cc8b9.css">
 </head>
 
 <body>
@@ -361,12 +361,12 @@
             <h2 class="footer__title">
                 Transforming your <span class="accent-text">body</span> shape with us
             </h2>
-            <form class="subscribe__form" id="subscribeForm">
+            <form class="subscribe__form">
                 <h3 class="subscribe__form-title">
                     Subscribe and learn about new exercises!
                 </h3>
                 <input class="subscribe__form-input" type="email" name="email" placeholder="Email" required />
-                <button class="subscribe__form-btn" type="submit" id="subscribeBtn">
+                <button class="subscribe__form-btn" type="submit">
                     Send
                 </button>
             </form>
@@ -385,36 +385,6 @@
         </div>
     </div>
 </div>
-<script>
-    document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Зупиняємо стандартну відправку форми
-
-        const emailInput = document.getElementById('email');
-        if (emailInput.checkValidity()) {
-            const email = emailInput.value;
-
-            // Відправка даних на backend
-            fetch('https://your-energy.b.goit.study/api/subscription', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email: email })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Обробка відповіді від backend
-                    alert('Subscription successful!');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Subscription failed. Please try again later.');
-                });
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    });
-</script>
 
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
