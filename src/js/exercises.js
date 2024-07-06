@@ -18,7 +18,7 @@ exerciseSearchBtn.addEventListener('click', onSearchClick);
 clearButton.addEventListener('click', () => {
   inputField.value = '';
   clearButton.style.display = 'none';
-  onSearchClick(); // Trigger search with empty input
+  onSearchClick();
 });
 
 inputField.addEventListener('input', () => {
