@@ -1,16 +1,15 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 
-export function groupListPagination({
+export function pagination({
+  container,
   currentPage,
   perPage,
   totalItems,
   totalPages,
   onChange,
 }) {
-  const container = 'js-group-list-pagination';
   const paginationContainer = elements.groupListPagination;
 
   if (totalPages > 1 && !filtersStorageInstance.isExercisesListVisible()) {

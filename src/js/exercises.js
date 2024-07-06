@@ -1,25 +1,18 @@
-import { getExercises } from './api-service/exercices-api';
-import { renderExercisesList } from './render-exercises-list';
-import { elements } from './elements';
+import { getExercisesList } from './get-exercises-list';
+import { setExercisesListVisible } from './set-exercises-list-visibility';
+import { filtersStorageInstance } from './filters-state-storage';
+
+let limit = window.innerWidth < 768 ? 8 : 10;
 
 const exerciseSearchBtn = document.querySelector('.exercises_search-img');
 const clearButton = document.querySelector('.exercises_criss-cross-img');
 const inputField = document.querySelector('.exercises_search-input');
 
-let limit = window.innerWidth < 768 ? 8 : 10;
-
 const onSearchClick = async () => {
-  const category = document.querySelector('.exercises_name').textContent;
-  const searchTerm = inputField.value;
-
-  const response = await getExercises(category, searchTerm, 1, limit);
-
-
-  if (response && response.results) {
-    renderExercisesList(elements.exercisesWrapper, response.results);
-  } else {
-    console.error('Invalid response structure:', response);
-  }
+  const searchTerm = inputField.value.trim();
+  filtersStorageInstance.setExercisesKeyword(searchTerm);
+  getExercisesList();
+  setExercisesListVisible();
 };
 
 exerciseSearchBtn.addEventListener('click', onSearchClick);
@@ -38,7 +31,7 @@ inputField.addEventListener('input', () => {
   }
 });
 
-inputField.addEventListener('keypress', (event) => {
+inputField.addEventListener('keypress', event => {
   if (event.key === 'Enter') {
     onSearchClick();
   }
@@ -50,10 +43,10 @@ document.querySelectorAll('.exercises__nav-item').forEach(item => {
       el.classList.remove('active');
     });
     item.classList.add('active');
-    
+
     const category = item.textContent.trim();
     document.querySelector('.exercises_name').textContent = category;
-    
+
     onSearchClick();
   });
 });

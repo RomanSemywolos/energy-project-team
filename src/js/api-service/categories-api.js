@@ -14,15 +14,15 @@ const getCategories = async (category, page = 1, limit = 12) => {
 };
 
 document.querySelectorAll('.exercises__nav-item').forEach(item => {
-            item.addEventListener('click', async () => {
-                const category = item.getAttribute('data-category');
-                try {
-                    const data = await getCategories(category);
-                    console.log(data);
-                } catch (error) {
-                    console.error('Error fetching categories:', error);
-                }
-            });
-        });
+  item.addEventListener('click', async () => {
+    const category = item.getAttribute('data-category');
+    try {
+      const data = await getCategories(category);
+      console.log(data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  });
+});
 
 export { getCategories };

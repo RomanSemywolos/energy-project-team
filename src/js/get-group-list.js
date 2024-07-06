@@ -1,7 +1,7 @@
 import { elements } from './elements.js';
 import { filtersStorageInstance } from './filters-state-storage.js';
 import { renderGroupsList } from './render-groups-list.js';
-import { groupListPagination } from './get-group-list-pagination.js';
+import { pagination } from './pagination.js';
 import { getCategories } from './api-service/categories-api';
 
 async function getGroupListForNewPage(page) {
@@ -17,7 +17,8 @@ export async function getGroupList({ page, filter }) {
   const { results, page: currentPage, perPage, totalPages } = responseData;
 
   const totalItems = totalPages * perPage;
-  groupListPagination({
+  pagination({
+    container: 'js-group-list-pagination',
     currentPage,
     perPage,
     totalItems,

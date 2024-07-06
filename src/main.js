@@ -1,3 +1,6 @@
+import 'izitoast/dist/css/iziToast.min.css';
+import 'tui-pagination/dist/tui-pagination.css';
+
 import { displayQuote } from './js/daily-quote.js';
 import { getCategories } from './js/api-service/categories-api.js';
 import { onCategoryClick } from './js/categories.js';
