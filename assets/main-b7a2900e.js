@@ -27,8 +27,8 @@ import{a as p,b as K,P as z}from"./vendor-a6d4c47e.js";(function(){const t=docum
           <div class="exercise-card-content-holder">
             <div class="exercise-card-title-holder">
               <span class="exercise-card-title-icon" >
-                <svg width="24" height="24">
-                  <use href="${g}#running-stick-figure-boder"></use>
+                <svg width="20" height="20">
+                  <use href="${g}#running-stick-figure"></use>
                 </svg>
               </span>
               <div class="exercise-card-title-name">${C(l)}</div>
@@ -122,4 +122,4 @@ import{a as p,b as K,P as z}from"./vendor-a6d4c47e.js";(function(){const t=docum
   <svg class="btn-favorites-icon">
     <use href="${g}#trash"></use>
   </svg>`}
-//# sourceMappingURL=main-02783b1e.js.map
+//# sourceMappingURL=main-b7a2900e.js.map
