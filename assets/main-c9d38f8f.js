@@ -122,4 +122,4 @@ import{a as p,b as K,P as z}from"./vendor-a6d4c47e.js";(function(){const t=docum
   <svg class="btn-favorites-icon">
     <use href="${g}#trash"></use>
   </svg>`}
-//# sourceMappingURL=main-4b6e77bb.js.map
+//# sourceMappingURL=main-c9d38f8f.js.map
