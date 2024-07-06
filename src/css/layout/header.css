@@ -1,0 +1,101 @@
+@media screen and (max-width: 767px) {
+    .header-section {
+      position: relative;
+      padding-top: 20px;
+      padding-bottom: 80px;
+    }
+  }
+  
+  .header-menu {
+    display: none;
+  }
+  
+  .header-socials-list {
+    display: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .header-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-bottom: 100px;
+    }
+    .header-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .header-menu {
+      display: flex;
+      border-radius: 60px;
+      background: var(--dark-gray);
+      align-items: center;
+      justify-content: center;
+      width: 233px;
+      height: 52px;
+    }
+  
+    .header-menu-item:not(:last-child) {
+      margin-right: 18px;
+    }
+  
+    .header-menu-link {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
+      border-radius: 30px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 12px;
+      padding-right: 12px;
+      color: var(--light-gray);
+      transition: var(--transition);
+    }
+    .header-menu-link:hover,
+    .header-menu-link:focus {
+      background-color: var(--light-gray);
+      color: var(--dark-gray);
+    }
+  
+    .header-socials-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-left: 80px;
+    }
+    .current-page {
+      color: var(--dark-gray);
+      background-color: var(--light-gray);
+    }
+    .header-socials-item-link {
+      border-radius: 10px;
+      border: 1px solid var(--dark-gray);
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      fill: var(--dark-gray);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+  
+    .header-socials-item-link:hover,
+    .header-socials-item-link:focus {
+      background-color: var(--dark-gray);
+      fill: var(--light-gray);
+    }
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .header-section {
+      padding-bottom: 96px;
+    }
+  
+    .header-socials-list {
+      margin-left: 400px;
+    }
+  }
