@@ -2,6 +2,8 @@ import { getExercisesList } from './get-exercises-list';
 import { setExercisesListVisible } from './set-exercises-list-visibility';
 import { filtersStorageInstance } from './filters-state-storage';
 
+let limit = window.innerWidth < 768 ? 8 : 10;
+
 const exerciseSearchBtn = document.querySelector('.exercises_search-img');
 const clearButton = document.querySelector('.exercises_criss-cross-img');
 const inputField = document.querySelector('.exercises_search-input');

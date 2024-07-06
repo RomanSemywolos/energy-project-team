@@ -4,7 +4,6 @@ import { renderExercisesList } from './render-exercises-list.js';
 import { filterCategories } from './constants.js';
 import { getExercises } from './api-service/exercices-api.js';
 
-// let limit = window.innerWidth < 768 ? 8 : 10;
 const inputField = document.querySelector('.exercises_search-input');
 
 export async function getExercisesList() {
