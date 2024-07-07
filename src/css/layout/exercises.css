@@ -48,8 +48,12 @@
   line-height: 20px;
 }
 
+.slash {
+  display: none;
+}
+
 .exercises_search {
-  /* display: none; */
+  display: none;
   position: relative;
   margin-bottom: 20px;
 }
@@ -58,11 +62,13 @@
   display: none;
   cursor: pointer;
   position: absolute;
-  top: 17px;
-  right: 42px;
+  top: 13px;
+  right: 36px;
 }
 
 .exercises_search-img {
+  position: absolute;
+  display: block;
   cursor: pointer;
   position: absolute;
   top: 13px;
@@ -91,6 +97,10 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+  border: none;
+  background: none;
+  padding: 0;
+
 }
 
 .exercises__nav-item-current {
@@ -542,11 +552,8 @@
   line-height: 129%;
 }
 
-.quote_wrap {
-  margin-left: 50px;
-}
-
 .daily-quote-text {
+  padding-left: 50px;
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
@@ -556,6 +563,7 @@
 }
 
 .daily-quote-author {
+  padding-left: 50px;
   font-weight: 400;
   line-height: 150%;
 }

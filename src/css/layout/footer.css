@@ -1,5 +1,5 @@
 .footer__background {
-  background-color: black;
+  background-color: var(--dark-gray);
 }
 
 .footer__container {
@@ -13,12 +13,6 @@
     flex-wrap: wrap;
     padding-top: 64px;
     padding-bottom: 16px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .footer__container {
-    margin-top: 68px;
   }
 }
 

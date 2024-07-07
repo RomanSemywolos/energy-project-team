@@ -43,7 +43,6 @@
 
 @media screen and (max-width: 767px) {
   .group-list-card {
-    margin-bottom: 20px;
     position: relative;
   }
 }

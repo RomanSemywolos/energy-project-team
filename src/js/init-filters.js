@@ -1,24 +1,16 @@
 import { filtersStorageInstance } from './filters-state-storage.js';
 import { elements } from './elements.js';
 import { getGroupList } from './get-group-list.js';
-import { getExercisesList } from './get-exercises-list.js';
-import {
-  setExercisesListVisible,
-  setExercisesListHidden,
-} from './set-exercises-list-visibility.js';
 
-const initPage = filtersStorageInstance.getGroupPage();
-const initFilter = filtersStorageInstance.getFilterCategory();
+const initFilter = 'Muscles';
 
-elements.groupListPagination.style.display = 'none';
-getGroupList({ page: initPage, filter: initFilter });
+filtersStorageInstance.setGroupPage(1);
+filtersStorageInstance.setFilterCategory(initFilter);
 
-if (filtersStorageInstance.isExercisesListVisible()) {
-  getExercisesList();
-  setExercisesListVisible();
-} else {
-  setExercisesListHidden();
+if (!!elements.groupListPagination) {
+  elements.groupListPagination.style.display = 'none';
 }
+getGroupList({ page: 1, filter: initFilter });
 
 elements.exercisesNavList.forEach(elem => {
   const textContent = elem.textContent.trim();

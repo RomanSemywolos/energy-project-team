@@ -1,4 +1,4 @@
-.group-list-pagination {
+.pagination {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +7,7 @@
   gap: 8px;
 }
 
-.group-list-pagination > button {
+.pagination > button {
   width: 32px;
   height: 32px;
   font-size: 24px;
@@ -19,12 +19,12 @@
   align-items: center;
 }
 
-.group-list-pagination button.is-active {
+.pagination button.is-active {
   border-radius: 50%;
   color: var(--dark-gray);
   border: 1px solid var(--dark-gray);
 }
 
-.group-list-pagination > button:hover {
+.pagination > button:hover {
   color: var(--dark-gray);
 }

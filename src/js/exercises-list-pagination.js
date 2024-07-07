@@ -1,19 +1,19 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import { elements } from './elements';
 import { filtersStorageInstance } from './filters-state-storage';
 
-export function groupListPagination({
+export function pagination({
   currentPage,
   perPage,
   totalItems,
   totalPages,
   onChange,
 }) {
-  const container = 'js-group-list-pagination';
-  const paginationContainer = elements.groupListPagination;
+  const paginationContainer = elements.exercisesListPagination;
 
-  if (totalPages > 1 && !filtersStorageInstance.isExercisesListVisible()) {
+  if (!paginationContainer) return;
+
+  if (totalPages > 1 && filtersStorageInstance.isExercisesListVisible()) {
     paginationContainer.classList.remove('is-hidden');
   } else {
     paginationContainer.classList.add('is-hidden');
@@ -33,7 +33,7 @@ export function groupListPagination({
     },
   };
 
-  const pagination = new Pagination(container, options);
+  const pagination = new Pagination('js-exercises-list-pagination', options);
 
   pagination.on('beforeMove', event => {
     const newPage = event.page;

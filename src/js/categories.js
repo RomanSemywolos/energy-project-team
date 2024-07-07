@@ -7,7 +7,12 @@ const exerciseCategoryList = document.querySelector('.exercises_nav');
 
 const onCategoryClick = async event => {
   try {
-    let target = event.target;
+    let target = event.target.closest('a');
+
+    if (!target) {
+      return;
+    }
+
     let curentCategory = document.querySelector('.exercises__nav-item-current');
 
     const toogleClass = (curentCategory, target) => {
@@ -17,6 +22,10 @@ const onCategoryClick = async event => {
 
     toogleClass(curentCategory, target);
 
+    elements.searchField.style.display = 'none';
+    elements.exrciseSlash.style.display = 'none';
+    clearSearchField();
+
     const newFilter = event.target.textContent.trim();
     elements.groupList.innerHTML = '';
     setExercisesListHidden();
@@ -25,7 +34,9 @@ const onCategoryClick = async event => {
     filtersStorageInstance.setGroupPage(1);
     filtersStorageInstance.setExercisesPage(1);
     filtersStorageInstance.setExercisesKeyword('');
-    elements.groupListPagination.style.display = 'none';
+    if (!!elements.groupListPagination) {
+      elements.groupListPagination.style.display = 'none';
+    }
 
     getGroupList({ page: 1, filter: newFilter });
   } catch (error) {
@@ -33,6 +44,12 @@ const onCategoryClick = async event => {
   }
 };
 
-exerciseCategoryList.addEventListener('click', onCategoryClick);
+const clearSearchField = () => {
+  elements.searchInput.value = '';
+  elements.clearSearchButton.style.display = 'none';
+};
 
-export { onCategoryClick };
+if (exerciseCategoryList) {
+  exerciseCategoryList.addEventListener('click', onCategoryClick);
+}
+export { onCategoryClick, clearSearchField };

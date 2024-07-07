@@ -1,4 +1,12 @@
 import icons from './../img/icons.svg';
+import { getExerciseById } from './api-service/exercices-api';
+import {
+  createMarkup,
+  updateModal,
+  openModalExercises,
+  toggleBtn,
+  closeModalExercises,
+} from './modal-exercises';
 
 function capitalizeFirstLetter(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -28,8 +36,8 @@ export function createExercisesMarkup(data) {
           <div class="exercise-card-content-holder">
             <div class="exercise-card-title-holder">
               <span class="exercise-card-title-icon" >
-                <svg width="24" height="24">
-                  <use href="${icons}#running-stick-figure-boder"></use>
+                <svg width="20" height="20">
+                  <use href="${icons}#running-stick-figure"></use>
                 </svg>
               </span>
               <div class="exercise-card-title-name">${capitalizeFirstLetter(
@@ -63,7 +71,7 @@ export function createExercisesMarkup(data) {
 export function renderExercisesList(container, exercisesList) {
   container.innerHTML = '';
 
-  if (!exercisesList || exercisesList.length === 0) {
+  if (exercisesList?.length === 0) {
     container.insertAdjacentHTML(
       'beforeend',
       `<li class="error-card">
@@ -72,6 +80,37 @@ export function renderExercisesList(container, exercisesList) {
     );
     return;
   }
+
+  async function openExerciseModal(exerciseId) {
+    try {
+      const exerciseData = await getExerciseById(exerciseId);
+      console.log('Exercise Data:', exerciseData);
+
+      const markup = createMarkup(exerciseData);
+      updateModal(markup);
+      openModalExercises();
+
+      const btnModalFavorites = document.querySelector(
+        '.modal-exercises-btn-favorites'
+      );
+      btnModalFavorites.addEventListener('click', toggleBtn);
+      const btnModalClose = document.querySelector(
+        '.modal-exercises-btn-close'
+      );
+      btnModalClose.addEventListener('click', closeModalExercises);
+    } catch (error) {
+      console.error('ERROR:', error);
+    }
+  }
+
+  container.addEventListener('click', function (event) {
+    const button = event.target.closest('.exercise-card-header-btn');
+    if (button) {
+      const buttonId = button.getAttribute('data-button-id');
+      console.log(`Button with id ${buttonId} was clicked.`);
+      openExerciseModal(buttonId);
+    }
+  });
 
   container.insertAdjacentHTML(
     'beforeend',

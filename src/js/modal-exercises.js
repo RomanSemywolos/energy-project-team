@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
+import { addContent } from './favorites';
 
 let isFavorite = false;
 let idFavorite;
@@ -9,7 +9,7 @@ const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
 const listItem = document.querySelector('.exercise-card-header-btn');
 
-listItem.addEventListener('click', onExercisesCardClick);
+// listItem.addEventListener('click', onExercisesCardClick);
 
 async function onExercisesCardClick(event) {
   if (!event.target.closest('.exercise-card')) {
@@ -43,7 +43,7 @@ async function onExercisesCardClick(event) {
   }
 }
 
-function openModalExercises() {
+export function openModalExercises() {
   const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
 
   modalExercises.classList.remove('hidden');
@@ -52,13 +52,13 @@ function openModalExercises() {
   document.body.style.overflow = 'hidden';
 }
 
-function updateModal(markup) {
+export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
   toggleFavorites();
 }
 
-function createRating(rating) {
+export function createRating(rating) {
   const starColor = '#EEA10C';
   const emptyStarColor = '#F4F4F4';
   const totalStars = 5;
@@ -103,7 +103,7 @@ function createRating(rating) {
 
   return ratingWithStars;
 }
-function createMarkup({
+export function createMarkup({
   _id,
   bodyPart,
   equipment,
@@ -188,18 +188,20 @@ function createMarkup({
 `;
 }
 
-function closeModalExercises() {
+export function closeModalExercises() {
   modalExercises.classList.add('hidden');
   overlay.classList.add('hidden');
   document.body.style.paddingRight = '0px';
   document.body.style.overflow = 'auto';
 }
 
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) {
-    closeModalExercises();
-  }
-});
+if (!!overlay) {
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeModalExercises();
+    }
+  });
+}
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
@@ -207,7 +209,7 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-function toggleFavorites() {
+export function toggleFavorites() {
   const local = JSON.parse(localStorage.getItem('exerciseData'));
 
   const btnModalFavorites = document.querySelector(
@@ -223,7 +225,7 @@ function toggleFavorites() {
   }
 }
 
-function toggleBtn() {
+export function toggleBtn() {
   isFavorite = !isFavorite;
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
@@ -247,6 +249,52 @@ function toggleBtn() {
         }, 100);
   }
 }
+
+// export function toggleBtn() {
+//   isFavorite = !isFavorite;
+//   const btnModalFavorites = document.querySelector(
+//     '.modal-exercises-btn-favorites'
+//   );
+//   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+//   if (!btnModalFavorites) {
+//     console.error(
+//       "Element with class '.modal-exercises-btn-favorites' not found."
+//     );
+//     return;
+//   }
+
+//   const exerciseId = btnModalFavorites.getAttribute('data-id');
+
+//   if (!exerciseId) {
+//     console.error(
+//       "Element with class '.modal-exercises-btn-favorites' does not have a 'data-id' attribute."
+//     );
+//     return;
+//   }
+
+//   if (isFavorite) {
+//     // Добавляем объект упражнения в избранное
+//     favorites.push({ id: exerciseId });
+//     localStorage.setItem('favorites', JSON.stringify(favorites));
+
+//     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
+//     setTimeout(() => {
+//       addContent();
+//     }, 100);
+//   } else {
+//     // Удаляем объект упражнения из избранного
+//     const indexToRemove = favorites.findIndex(item => item.id === exerciseId);
+//     if (indexToRemove !== -1) {
+//       favorites.splice(indexToRemove, 1);
+//       localStorage.setItem('favorites', JSON.stringify(favorites));
+//     }
+//     btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+//     setTimeout(() => {
+//       addContent();
+//     }, 100);
+//   }
+// }
 
 function createAddToFavoritesMarkup() {
   return `

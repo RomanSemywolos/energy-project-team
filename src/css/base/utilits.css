@@ -56,28 +56,6 @@ body {
   }
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-  }
-}
-
 @font-face {
   font-family: 'DMSans';
   src: url('../../fonts/DMSans/DMSans-Regular.woff2') format('woff2'),

@@ -1,29 +1,36 @@
 import { API_PROPERTIES } from '../api/api-properties';
+import { elements } from '../elements';
 import axios from 'axios';
 
 const { BASE_URL, EXERCISES } = API_PROPERTIES;
 axios.defaults.baseURL = BASE_URL;
 
-const getExercises = async (category, bodyPart, page = 1, limit = 10) => {
+const getExercises = async (
+  category,
+  bodyPart,
+  currentKeyword = '',
+  page = 1,
+  limit = 10
+) => {
   const params = new URLSearchParams({
     [category]: bodyPart,
+    keyword: currentKeyword,
     limit,
     page,
   });
-
   const response = await axios.get(`${EXERCISES}?${params}`);
-  
-  console.log(`Fetching exercises with params: ${params.toString()}`);
-  console.log('API response:', response.data);
 
-  const searchTerm = document.querySelector('.exercises_search-input').value.toLowerCase();
-  const filteredResults = response.data.results.filter(exercise => 
+  elements.searchField.style.display = 'block';
+
+  const searchTerm = document
+    .querySelector('.exercises_search-input')
+    .value.toLowerCase();
+  const filteredResults = response.data.results.filter(exercise =>
     exercise.name.toLowerCase().includes(searchTerm)
   );
 
   return { ...response.data, results: filteredResults };
 };
-
 
 const getExerciseById = async id => {
   const response = await axios.get(`${EXERCISES}/${id}`);
