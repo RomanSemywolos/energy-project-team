@@ -1,6 +1,4 @@
-import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
-import { addContent } from './favorites';
 
 let isFavorite = false;
 let idFavorite;
@@ -8,40 +6,6 @@ let idFavorite;
 const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
 const listItem = document.querySelector('.exercise-card-header-btn');
-
-// listItem.addEventListener('click', onExercisesCardClick);
-
-async function onExercisesCardClick(event) {
-  if (!event.target.closest('.exercise-card')) {
-    return;
-  }
-
-  try {
-    const exerciseID = event.target
-      .closest('.exercise-card')
-      .getAttribute('data-id');
-
-    const exerciseData = await getExerciseById(event);
-    console.log(exerciseData);
-    console.log('Exercise Data:', exerciseData);
-
-    idFavorite = exerciseID;
-
-    const markup = createMarkup(exerciseData);
-    console.log('Generated Markup:', markup);
-    updateModal(markup);
-    openModalExercises();
-
-    const btnModalFavorites = document.querySelector(
-      '.modal-exercises-btn-favorites'
-    );
-    btnModalFavorites.addEventListener('click', toggleBtn);
-    const btnModalClose = document.querySelector('.modal-exercises-btn-close');
-    btnModalClose.addEventListener('click', closeModalExercises);
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 export function openModalExercises() {
   const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
