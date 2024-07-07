@@ -24,6 +24,7 @@
   transition: transform 500ms, opacity 500ms;
   transform: translateX(100%);
   opacity: 0;
+  z-index: 444;
 }
 .nav-bar-mobile-container.is-hidden {
   opacity: 0;
