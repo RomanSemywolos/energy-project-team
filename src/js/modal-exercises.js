@@ -165,11 +165,11 @@ export function closeModalExercises() {
   btnModalClose.removeEventListener('click', closeModalExercises);
 }
 
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) {
-    closeModalExercises();
-  }
-});
+// overlay.addEventListener('click', function (event) {
+//   if (event.target === overlay) {
+//     closeModalExercises();
+//   }
+// });
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
