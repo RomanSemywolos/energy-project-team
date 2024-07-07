@@ -74,13 +74,16 @@
     }
     .header-socials-item-link {
       border-radius: 10px;
-      border: 1px solid var(--dark-gray);
+      border: 1px solid #2424241A;
       padding: 8px;
       display: flex;
       align-items: center;
       fill: var(--dark-gray);
       opacity: 0.8;
       transition: var(--transition);
+      width: 44px;
+      height: 44px;
+      justify-content: center;
     }
   
     .header-socials-item-link:hover,
