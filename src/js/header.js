@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (
       currentUrl.href === homePage.href ||
       currentUrl.pathname === '/' ||
-      currentUrl.pathname === '/energy-project-team.git/'
+      currentUrl.pathname === '/energy-project-team/'
     ) {
       favouritesPage.classList.remove('current-page');
       homePage.classList.add('current-page');
