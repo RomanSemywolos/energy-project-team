@@ -1,6 +1,6 @@
 import { getExerciseById } from './api-service/exercices-api';
 import icons from '../img/icons.svg';
-import { addContent } from './favorites';
+// import { addContent } from './favorites';
 
 let isFavorite = false;
 let idFavorite;

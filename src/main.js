@@ -11,4 +11,9 @@ import './js/header.js';
 import './js/burger.js';
 import './js/group-list-listener.js';
 import './js/modal-exercises.js';
+
+import './js/favorites.js';
+import './js/favorites-storage-handler.js';
+
 import './js/footer.js';
+

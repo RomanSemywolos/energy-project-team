@@ -1,15 +1,51 @@
-import { markupText } from './favorites-markup-text';
-import { markupList } from './favorites-markup-list';
-// import { listOfFavorites } from '../';
+import { createExercisesMarkup } from './render-exercises-list.js';
 
-export function addContent() {
-  //   listOfFavorites();
 
-  const favorites = JSON.parse(localStorage.getItem('favorites'));
+import {
+  getFavoritesData,
+  removeExerciseFromFavorites,
+} from './favorites-storage-handler.js';
 
-  if (!favorites?.length) {
-    markupText();
-    return;
+
+
+let localData = [];
+const blankPageTextRef = document.querySelector('.favorite-text');
+console.log(blankPageTextRef)
+const favoritesListRef = document.querySelector('.favourites_list');
+
+function onExerciseRemoveClick(e) {
+  const target = e.target.closest('.exercise-remove-btn');
+  if (!target) return;
+  const exerciseID = target.getAttribute('data-exercise-id');
+  if (exerciseID) {
+    if (removeExerciseFromFavorites(exerciseID)) {
+      handleFavoriteItems(getFavoritesData(), true);
+    }
   }
-  markupList(favorites);
 }
+
+function itemHandler(arr) {
+  favoritesListRef.innerHTML = createExercisesMarkup(arr, true);
+}
+
+export function handleFavoriteItems(data = localData) {
+  if (!data.length) {
+    blankPageTextRef.classList.remove('visually-hidden');
+    favoritesListRef.innerHTML = '';
+    favoritesListRef.classList.add('hidden');
+    return;
+  } else {
+    blankPageTextRef.classList.add('visually-hidden');
+    favoritesListRef.classList.remove('hidden');
+  }
+  itemHandler(data);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('favorites.html')) {
+    localData = getFavoritesData();
+    // Initial run
+    handleFavoriteItems(localData);
+    favoritesListRef.addEventListener('click', onExerciseRemoveClick);
+  }
+});
