@@ -3,20 +3,18 @@
   flex-direction: column;
   row-gap: 20px;
   column-gap: 16px;
-
   max-width: 100%;
 }
 
 .exercise-card {
   display: flex;
   flex-direction: column;
-
   border-radius: 30px;
   background-color: var(--white);
   border-radius: 15px;
   padding: 16px;
+  height: 200px;
   max-width: 335px;
-  height: 141px;
 }
 
 .exercise-card-header-holder {
@@ -48,7 +46,6 @@
 }
 
 .exercise-card-rating {
-  fill: var(--bright-yellow);
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -145,7 +142,7 @@
 
   .exercise-card {
     width: calc((100% - 16px) / 2);
-    height: 141px;
+    height: 190px;
     max-width: 100%;
   }
 }
