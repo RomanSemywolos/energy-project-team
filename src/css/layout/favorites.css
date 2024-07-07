@@ -64,6 +64,7 @@
 }
 
 .favourites_iconBlock_commas {
+  fill: var(--white);
   width: 24px;
   height: 24px;
 }

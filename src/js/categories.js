@@ -42,6 +42,7 @@ const clearSearchField = () => {
   elements.clearSearchButton.style.display = 'none';
 };
 
-exerciseCategoryList.addEventListener('click', onCategoryClick);
-
+if (exerciseCategoryList) {
+  exerciseCategoryList.addEventListener('click', onCategoryClick);
+}
 export { onCategoryClick, clearSearchField };
