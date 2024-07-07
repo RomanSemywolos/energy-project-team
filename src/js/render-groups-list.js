@@ -35,6 +35,7 @@ function addAnimation() {
 }
 
 export function renderGroupsList(container, groupsList) {
+  if (!container) return;
   container.innerHTML = '';
   addAnimation();
   container.insertAdjacentHTML('beforeend', createGroupsMarkup(groupsList));

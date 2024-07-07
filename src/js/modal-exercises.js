@@ -195,11 +195,13 @@ export function closeModalExercises() {
   document.body.style.overflow = 'auto';
 }
 
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) {
-    closeModalExercises();
-  }
-});
+if (!!overlay) {
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeModalExercises();
+    }
+  });
+}
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {

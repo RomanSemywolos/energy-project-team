@@ -11,6 +11,8 @@ export function pagination({
 }) {
   const paginationContainer = elements.groupListPagination;
 
+  if (!paginationContainer) return;
+
   if (totalPages > 1 && !filtersStorageInstance.isExercisesListVisible()) {
     paginationContainer.classList.remove('is-hidden');
   } else {

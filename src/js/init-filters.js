@@ -7,7 +7,9 @@ const initFilter = 'Muscles';
 filtersStorageInstance.setGroupPage(1);
 filtersStorageInstance.setFilterCategory(initFilter);
 
-elements.groupListPagination.style.display = 'none';
+if (!!elements.groupListPagination) {
+  elements.groupListPagination.style.display = 'none';
+}
 getGroupList({ page: 1, filter: initFilter });
 
 elements.exercisesNavList.forEach(elem => {

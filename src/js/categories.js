@@ -29,7 +29,9 @@ const onCategoryClick = async event => {
     filtersStorageInstance.setGroupPage(1);
     filtersStorageInstance.setExercisesPage(1);
     filtersStorageInstance.setExercisesKeyword('');
-    elements.groupListPagination.style.display = 'none';
+    if (!!elements.groupListPagination) {
+      elements.groupListPagination.style.display = 'none';
+    }
 
     getGroupList({ page: 1, filter: newFilter });
   } catch (error) {

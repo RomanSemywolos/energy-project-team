@@ -7,7 +7,7 @@ const elements = {
   emailInput: document.querySelector('[name="email"]'),
 };
 
-async function test(event) {
+async function onSubmit(event) {
   event.preventDefault();
 
   if (!elements.emailInput.value) return;
@@ -29,4 +29,6 @@ async function test(event) {
   }
 }
 
-elements.form.addEventListener('submit', test);
+if (!!elements.form) {
+  elements.form.addEventListener('submit', onSubmit);
+}

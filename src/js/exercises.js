@@ -15,27 +15,33 @@ const onSearchClick = async () => {
   setExercisesListVisible();
 };
 
-exerciseSearchBtn.addEventListener('click', onSearchClick);
+if (!!exerciseSearchBtn) {
+  exerciseSearchBtn.addEventListener('click', onSearchClick);
+}
 
-clearButton.addEventListener('click', () => {
-  inputField.value = '';
-  clearButton.style.display = 'none';
-  onSearchClick();
-});
-
-inputField.addEventListener('input', () => {
-  if (inputField.value.length > 0) {
-    clearButton.style.display = 'block';
-  } else {
+if (!!clearButton) {
+  clearButton.addEventListener('click', () => {
+    inputField.value = '';
     clearButton.style.display = 'none';
-  }
-});
-
-inputField.addEventListener('keypress', event => {
-  if (event.key === 'Enter') {
     onSearchClick();
-  }
-});
+  });
+}
+
+if (!!inputField) {
+  inputField.addEventListener('input', () => {
+    if (inputField.value.length > 0) {
+      clearButton.style.display = 'block';
+    } else {
+      clearButton.style.display = 'none';
+    }
+  });
+
+  inputField.addEventListener('keypress', event => {
+    if (event.key === 'Enter') {
+      onSearchClick();
+    }
+  });
+}
 
 // document.querySelectorAll('.exercises__nav-item').forEach(item => {
 //   item.addEventListener('click', () => {
