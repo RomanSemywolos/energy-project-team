@@ -10,18 +10,19 @@ import {
 
 let localData = [];
 const blankPageTextRef = document.querySelector('.favorite-text');
+console.log(blankPageTextRef)
 const favoritesListRef = document.querySelector('.favourites_list');
 
-// function onExerciseRemoveClick(e) {
-//   const target = e.target.closest('.exercise-remove-btn');
-//   if (!target) return;
-//   const exerciseID = target.getAttribute('data-exercise-id');
-//   if (exerciseID) {
-//     if (removeExerciseFromFavorites(exerciseID)) {
-//       handleFavoriteItems(getFavoritesData(), true);
-//     }
-//   }
-// }
+function onExerciseRemoveClick(e) {
+  const target = e.target.closest('.exercise-remove-btn');
+  if (!target) return;
+  const exerciseID = target.getAttribute('data-exercise-id');
+  if (exerciseID) {
+    if (removeExerciseFromFavorites(exerciseID)) {
+      handleFavoriteItems(getFavoritesData(), true);
+    }
+  }
+}
 
 function itemHandler(arr) {
   favoritesListRef.innerHTML = createExercisesMarkup(arr, true);
