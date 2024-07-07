@@ -19,7 +19,25 @@ export function openModalExercises() {
 export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
-  toggleFavorites();
+  const exerciseId = document
+    .querySelector('.modal-exercises-btn-favorites')
+    .getAttribute('data-id');
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  const isExerciseInFavorites = favorites.some(item => item._id === exerciseId);
+
+  const btnModalFavorites = document.querySelector(
+    '.modal-exercises-btn-favorites'
+  );
+  if (isExerciseInFavorites) {
+    btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
+    isFavorite = true;
+  } else {
+    btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+    isFavorite = false;
+  }
+
+  btnModalFavorites.addEventListener('click', toggleBtn);
 }
 
 export function createRating(rating) {
@@ -157,19 +175,15 @@ export function closeModalExercises() {
   overlay.classList.add('hidden');
   document.body.style.paddingRight = '0px';
   document.body.style.overflow = 'auto';
-  const btnModalFavorites = document.querySelector(
-    '.modal-exercises-btn-favorites'
-  );
-  const btnModalClose = document.querySelector('.modal-exercises-btn-close');
-  btnModalFavorites.removeEventListener('click', toggleBtn);
-  btnModalClose.removeEventListener('click', closeModalExercises);
 }
 
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) {
-    closeModalExercises();
-  }
-});
+if (!!overlay) {
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeModalExercises();
+    }
+  });
+}
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
@@ -194,37 +208,53 @@ export function toggleFavorites() {
 }
 
 export function toggleBtn() {
-  isFavorite = !isFavorite;
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
   );
 
   if (!btnModalFavorites) {
-    console.error('Element  not found.');
+    console.error('Element not found.');
     return;
   }
 
   const exerciseId = btnModalFavorites.getAttribute('data-id');
 
   if (!exerciseId) {
-    console.error('Element  not have.');
+    console.error('Element does not have a data-id attribute.');
+    return;
+  }
+
+  const exerciseData = window.currentExerciseData;
+
+  if (!exerciseData) {
+    console.error('Exercise data is not available.');
     return;
   }
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const isExerciseInFavorites = favorites.some(
+    item => item._id === exerciseData._id
+  );
 
-  if (isFavorite) {
-    favorites.push({ id: exerciseId });
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
-  } else {
-    const indexToRemove = favorites.findIndex(item => item.id === exerciseId);
+  if (isExerciseInFavorites) {
+    const indexToRemove = favorites.findIndex(
+      item => item._id === exerciseData._id
+    );
     if (indexToRemove !== -1) {
       favorites.splice(indexToRemove, 1);
+      console.log(
+        `Removed exercise with ID ${exerciseData._id} from favorites.`
+      );
       localStorage.setItem('favorites', JSON.stringify(favorites));
+      btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+      isFavorite = false;
     }
-    btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+  } else {
+    favorites.push(exerciseData);
+    console.log(`Added exercise with ID ${exerciseData._id} to favorites.`);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
+    isFavorite = true;
   }
 }
 
