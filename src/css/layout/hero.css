@@ -1,18 +1,19 @@
 .hero {
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
   .hero {
-    margin-top: 96px;
-    margin-bottom: 64px;
+    margin-top: 0px;
+    margin-bottom: 24px;
   }
 }
 
 @media (min-width: 1440px) {
   .hero {
-    margin-top: 100px;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
 }
 
