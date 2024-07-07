@@ -107,7 +107,7 @@ export function renderExercisesList(container, exercisesList) {
     const button = event.target.closest('.exercise-card-header-btn');
     if (button) {
       const buttonId = button.getAttribute('data-button-id');
-      console.log(`Button with id ${buttonId} was clicked.`);
+      // console.log(`Button with id ${buttonId} was clicked.`);
       openExerciseModal(buttonId);
     }
   });

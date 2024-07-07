@@ -1,8 +1,5 @@
 import icons from '../img/icons.svg';
 
-let isFavorite = false;
-let idFavorite;
-
 const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
 const listItem = document.querySelector('.exercise-card-header-btn');
@@ -19,9 +16,24 @@ export function openModalExercises() {
 export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
-  toggleFavorites();
-}
+  const exerciseId = document
+    .querySelector('.modal-exercises-btn-favorites')
+    .getAttribute('data-id');
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
+  const isExerciseInFavorites = favorites.some(item => item.id === exerciseId);
+
+  const btnModalFavorites = document.querySelector(
+    '.modal-exercises-btn-favorites'
+  );
+  if (isExerciseInFavorites) {
+    btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
+  } else {
+    btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+  }
+
+  btnModalFavorites.addEventListener('click', toggleBtn);
+}
 export function createRating(rating) {
   const starColor = '#EEA10C';
   const emptyStarColor = '#F4F4F4';
@@ -157,19 +169,15 @@ export function closeModalExercises() {
   overlay.classList.add('hidden');
   document.body.style.paddingRight = '0px';
   document.body.style.overflow = 'auto';
-  const btnModalFavorites = document.querySelector(
-    '.modal-exercises-btn-favorites'
-  );
-  const btnModalClose = document.querySelector('.modal-exercises-btn-close');
-  btnModalFavorites.removeEventListener('click', toggleBtn);
-  btnModalClose.removeEventListener('click', closeModalExercises);
 }
 
-overlay.addEventListener('click', function (event) {
-  if (event.target === overlay) {
-    closeModalExercises();
-  }
-});
+if (!!overlay) {
+  overlay.addEventListener('click', function (event) {
+    if (event.target === overlay) {
+      closeModalExercises();
+    }
+  });
+}
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && !modalExercises.classList.contains('hidden')) {
@@ -192,9 +200,7 @@ export function toggleFavorites() {
     btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
   }
 }
-
 export function toggleBtn() {
-  isFavorite = !isFavorite;
   const btnModalFavorites = document.querySelector(
     '.modal-exercises-btn-favorites'
   );
@@ -207,24 +213,22 @@ export function toggleBtn() {
   const exerciseId = btnModalFavorites.getAttribute('data-id');
 
   if (!exerciseId) {
-    console.error('Element  not have.');
+    console.error('Element  does not have  attribute.');
     return;
   }
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-  if (isFavorite) {
+  const isExerciseInFavorites = favorites.some(item => item.id === exerciseId);
+
+  if (isExerciseInFavorites) {
+    favorites = favorites.filter(item => item.id !== exerciseId);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
+  } else {
     favorites.push({ id: exerciseId });
     localStorage.setItem('favorites', JSON.stringify(favorites));
-
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
-  } else {
-    const indexToRemove = favorites.findIndex(item => item.id === exerciseId);
-    if (indexToRemove !== -1) {
-      favorites.splice(indexToRemove, 1);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-    }
-    btnModalFavorites.innerHTML = createAddToFavoritesMarkup();
   }
 }
 
