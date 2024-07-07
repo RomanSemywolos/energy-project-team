@@ -84,7 +84,8 @@ export function renderExercisesList(container, exercisesList) {
   async function openExerciseModal(exerciseId) {
     try {
       const exerciseData = await getExerciseById(exerciseId);
-      console.log('Exercise Data:', exerciseData);
+      window.currentExerciseData = exerciseData;
+      // console.log('Exercise Data:', exerciseData);
 
       const markup = createMarkup(exerciseData);
       updateModal(markup);
@@ -93,6 +94,7 @@ export function renderExercisesList(container, exercisesList) {
       const btnModalFavorites = document.querySelector(
         '.modal-exercises-btn-favorites'
       );
+      btnModalFavorites.setAttribute('data-id', exerciseData.id);
       btnModalFavorites.addEventListener('click', toggleBtn);
       const btnModalClose = document.querySelector(
         '.modal-exercises-btn-close'
@@ -107,7 +109,7 @@ export function renderExercisesList(container, exercisesList) {
     const button = event.target.closest('.exercise-card-header-btn');
     if (button) {
       const buttonId = button.getAttribute('data-button-id');
-      console.log(`Button with id ${buttonId} was clicked.`);
+      // console.log(`Button with id ${buttonId} was clicked.`);
       openExerciseModal(buttonId);
     }
   });
