@@ -83,7 +83,13 @@
 </symbol>
 
 <symbol id="menu-mobile-close" viewBox="0 0 32 32">
-<path stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16M8 8l16 16"></path>
+<path stroke="#ffffff" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16M8 8l16 16"></path>
+
+</symbol>
+
+<symbol id="arrow-top-right" viewBox="0 0 32 32">
+
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.6857" d="M17.481 6.837v23.339h-2.487v-23.337l-11.666 11.666-1.755-1.755 14.665-14.665 14.667 14.667-1.755 1.755-11.669-11.673z"></path>
 </symbol>
 
 <symbol id="star" viewBox="0 0 34 32">
