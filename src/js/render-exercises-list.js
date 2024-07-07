@@ -71,7 +71,7 @@ export function createExercisesMarkup(data) {
 export function renderExercisesList(container, exercisesList) {
   container.innerHTML = '';
 
-  if (!exercisesList || exercisesList.length === 0) {
+  if (exercisesList?.length === 0) {
     container.insertAdjacentHTML(
       'beforeend',
       `<li class="error-card">
