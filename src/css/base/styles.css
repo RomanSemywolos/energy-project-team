@@ -1,5 +1,6 @@
 @import url('./reset.css');
 @import url('./utilits.css');
+@import url('./container.css');
 
 /* sections */
 @import url('../layout/header.css');
