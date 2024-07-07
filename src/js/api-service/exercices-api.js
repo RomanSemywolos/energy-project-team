@@ -20,8 +20,6 @@ const getExercises = async (
   });
   const response = await axios.get(`${EXERCISES}?${params}`);
 
-  console.log('API response:', response.data);
-
   elements.searchField.style.display = 'block';
 
   const searchTerm = document
