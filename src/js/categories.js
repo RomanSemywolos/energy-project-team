@@ -7,7 +7,12 @@ const exerciseCategoryList = document.querySelector('.exercises_nav');
 
 const onCategoryClick = async event => {
   try {
-    let target = event.target;
+    let target = event.target.closest('a');
+
+    if (!target) {
+      return;
+    }
+
     let curentCategory = document.querySelector('.exercises__nav-item-current');
 
     const toogleClass = (curentCategory, target) => {
