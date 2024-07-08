@@ -408,6 +408,7 @@
     row-gap: 32px;
     flex-direction: row;
     padding-top: 64px;
+    margin-bottom: 64px;
   }
 
   .favourites_list_item {
@@ -458,6 +459,7 @@
     align-content: flex-start;
     padding-top: 0;
     align-items: start;
+    margin-bottom: 64px;
   }
 
   .favourites_list_item {
@@ -471,6 +473,7 @@
   .scroll {
     overflow-y: scroll;
     max-height: 500px;
+    padding-right: 16px;
   }
 }
 
