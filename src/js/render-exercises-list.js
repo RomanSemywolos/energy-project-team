@@ -90,41 +90,40 @@ export function renderExercisesList(container, exercisesList) {
     return;
   }
 
-  async function openExerciseModal(exerciseId) {
-    try {
-      const exerciseData = await getExerciseById(exerciseId);
-      window.currentExerciseData = exerciseData;
-      // console.log('Exercise Data:', exerciseData);
-
-      const markup = createMarkup(exerciseData);
-      updateModal(markup);
-      openModalExercises();
-
-      const btnModalFavorites = document.querySelector(
-        '.modal-exercises-btn-favorites'
-      );
-      btnModalFavorites.setAttribute('data-id', exerciseData.id);
-      btnModalFavorites.addEventListener('click', toggleBtn);
-      const btnModalClose = document.querySelector(
-        '.modal-exercises-btn-close'
-      );
-      btnModalClose.addEventListener('click', closeModalExercises);
-    } catch (error) {
-      console.error('ERROR:', error);
-    }
-  }
-
-  container.addEventListener('click', function (event) {
-    const button = event.target.closest('.exercise-card-header-btn');
-    if (button) {
-      const buttonId = button.getAttribute('data-button-id');
-      // console.log(`Button with id ${buttonId} was clicked.`);
-      openExerciseModal(buttonId);
-    }
-  });
+  container.addEventListener('click', openModal);
 
   container.insertAdjacentHTML(
     'beforeend',
     createExercisesMarkup(exercisesList)
   );
+}
+
+async function openExerciseModal(exerciseId) {
+  try {
+    const exerciseData = await getExerciseById(exerciseId);
+    window.currentExerciseData = exerciseData;
+    // console.log('Exercise Data:', exerciseData);
+
+    const markup = createMarkup(exerciseData);
+    updateModal(markup);
+    openModalExercises();
+
+    const btnModalFavorites = document.querySelector(
+      '.modal-exercises-btn-favorites'
+    );
+    btnModalFavorites.setAttribute('data-id', exerciseData.id);
+    btnModalFavorites.addEventListener('click', toggleBtn);
+    const btnModalClose = document.querySelector('.modal-exercises-btn-close');
+    btnModalClose.addEventListener('click', closeModalExercises);
+  } catch (error) {
+    console.error('ERROR:', error);
+  }
+}
+export function openModal(event) {
+  const button = event.target.closest('.exercise-card-header-btn');
+  if (button) {
+    const buttonId = button.getAttribute('data-button-id');
+    // console.log(`Button with id ${buttonId} was clicked.`);
+    openExerciseModal(buttonId);
+  }
 }

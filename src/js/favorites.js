@@ -1,4 +1,5 @@
 import { createExercisesMarkup } from './render-exercises-list.js';
+import { openModal } from './render-exercises-list.js';
 
 import {
   getFavoritesData,
@@ -45,3 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     favoritesListRef.addEventListener('click', onExerciseRemoveClick);
   }
 });
+
+if (favoritesListRef) {
+  favoritesListRef.addEventListener('click', openModal);
+}
