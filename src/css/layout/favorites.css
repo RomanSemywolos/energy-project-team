@@ -1,6 +1,23 @@
 .img-exercise {
   object-fit: cover;
   border-radius: 20px;
+  display: block;
+  width: 335px;
+  height: 119px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1440px) {
+  .img-exercise {
+    width: 344px;
+    height: 141px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .img-exercise {
+    width: 239px;
+    height: 141px;
+  }
 }
 
 .favourites_title {
