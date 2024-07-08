@@ -161,7 +161,7 @@
 .favourites_list::-webkit-scrollbar {
   width: 8px;
   border-radius: 12px;
-  background: var(--light-gray);
+  background: #2424241a;
 }
 
 .favourites_list::-webkit-scrollbar-thumb {
