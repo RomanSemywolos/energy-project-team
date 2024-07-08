@@ -248,6 +248,10 @@
   line-height: 150%;
 }
 
+.exercises_gallery {
+  width: 100%;
+}
+
 /*
   EXERCISE_CARD CSS
 */
