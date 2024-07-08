@@ -25,6 +25,11 @@
   gap: 16px;
 }
 
+.exercise-card-header-left {
+  display: flex;
+  gap: 8px;
+}
+
 .exercise-card-content-holder {
   display: flex;
   flex-grow: 1;
@@ -81,6 +86,15 @@
 .exercise-card-header-btn:focus {
   transform: scale(1.1);
 }
+
+/* .exercise-remove-btn {
+  transform: scale(1);
+  transition: transform var(--transition-fast);
+}
+.exercise-remove-btn:hover,
+.exercise-remove-btn:focus {
+  transform: scale(1.1);
+} */
 
 .exercise-card-title-holder {
   display: flex;

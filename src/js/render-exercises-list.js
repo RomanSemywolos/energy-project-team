@@ -12,19 +12,28 @@ function capitalizeFirstLetter(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-export function createExercisesMarkup(data) {
+export function createExercisesMarkup(data, isFavorites = false) {
   return data
-    .map(
-      ({ _id, bodyPart, target, rating, burnedCalories, time, name }) =>
-        `<li id="${_id}" class="exercise-card">
+    .map(({ _id, bodyPart, target, rating, burnedCalories, time, name }) => {
+      const icon = isFavorites
+        ? `<button class="exercise-card-btn exercise-remove-btn" data-exercise-id="${_id}" type="button">
+             <svg class="exercise-card-icon-garbage" width="16" height="16">
+               <use href="${icons}#trash">
+              </use>
+             </svg>
+          </button>`
+        : `<span class="exercise-card-rating">
+        <span>${rating.toFixed(1)}</span>
+        <svg width="34" height="32">
+          <use href="${icons}#star"></use>
+        </svg>
+      </span>`;
+      return `<li id="${_id}" class="exercise-card">
           <div class="exercise-card-header-holder">
+          <div class="exercise-card-header-left">
             <span class="exercise-card-tag">Workout</span>
-            <span class="exercise-card-rating">
-              <span>${rating.toFixed(1)}</span>
-              <svg width="34" height="32">
-                <use href="${icons}#star"></use>
-              </svg>
-            </span>
+            ${icon}
+            </div>
             <button class="exercise-card-header-btn" data-button-id="${_id}">
               Start
               <svg class="exercise-card-header-btn-icon" width="32" height="32">
@@ -63,8 +72,8 @@ export function createExercisesMarkup(data) {
               </div>
             </div>
           </div>
-        </li>`
-    )
+        </li>`;
+    })
     .join('');
 }
 

@@ -455,9 +455,16 @@
     padding-top: 0;
     margin: auto;
   }
+}
 
-  .scroll {
-    overflow-y: scroll;
-    max-height: 600px;
-  }
+.exercise-card-icon-garbage {
+  stroke: var(--dark-gray);
+  fill: none;
+}
+.exercise-remove-btn {
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding-right: 130px;
 }

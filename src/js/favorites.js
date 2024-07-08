@@ -1,16 +1,12 @@
 import { createExercisesMarkup } from './render-exercises-list.js';
 
-
 import {
   getFavoritesData,
   removeExerciseFromFavorites,
 } from './favorites-storage-handler.js';
 
-
-
 let localData = [];
 const blankPageTextRef = document.querySelector('.favorite-text');
-console.log(blankPageTextRef)
 const favoritesListRef = document.querySelector('.favourites_list');
 
 function onExerciseRemoveClick(e) {
