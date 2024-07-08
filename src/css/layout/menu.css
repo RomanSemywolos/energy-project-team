@@ -102,7 +102,7 @@
   width: 44px;
   height: 44px;
   padding: 8px;
-  border: solid 1px var(-light-gray-10);
+  border: solid 1px var(--light-gray-10);
   transition: fill var(--transition), background-color var(--transition);
 
   border-radius: 10px;

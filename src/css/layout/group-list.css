@@ -30,7 +30,7 @@
   width: 100%;
   position: relative;
   background-color: var(--dark-gray);
-  transition: box-shadow var(transition-fast);
+  transition: box-shadow var(--transition-fast);
   cursor: pointer;
   overflow: hidden;
 }
@@ -60,7 +60,7 @@
   height: 225px;
   object-fit: cover;
   filter: brightness(0.5);
-  transition: filter var(transition-fast);
+  transition: filter var(--transition-fast);
 }
 
 @media screen and (min-width: 768px) {
