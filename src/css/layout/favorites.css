@@ -161,7 +161,7 @@
 .favourites_list::-webkit-scrollbar {
   width: 8px;
   border-radius: 12px;
-  background: var(--dark-gray);
+  background: var(--light-gray);
 }
 
 .favourites_list::-webkit-scrollbar-thumb {
@@ -467,6 +467,10 @@
   .favorite-text {
     padding-top: 0;
     margin: auto;
+  }
+  .scroll {
+    overflow-y: scroll;
+    max-height: 500px;
   }
 }
 

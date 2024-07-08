@@ -23,6 +23,11 @@ function onExerciseRemoveClick(e) {
 
 function itemHandler(arr) {
   favoritesListRef.innerHTML = createExercisesMarkup(arr, true);
+  if (arr.length > 6) {
+    list.classList.add('scroll');
+  } else {
+    list.classList.remove('scroll');
+  }
 }
 
 export function handleFavoriteItems(data = localData) {
