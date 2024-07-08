@@ -367,10 +367,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .pd-top {
-    padding-top: 100px;
-  }
-
   .favourites_wrapper {
     flex-direction: column;
   }
